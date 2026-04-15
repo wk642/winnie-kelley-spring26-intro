@@ -47,8 +47,15 @@
 
 
 // PUT YOUR CODE HERE
+function repeat(number) {
+    console.log(`Q1:`);
+    // set up loop
+    for (let i =0; i < 3; i++){
+        console.log(`Hello World!`);
+    }
+}
 
-
+repeat(3);
 
 // ---------- QUESTION 2 ----------
 
