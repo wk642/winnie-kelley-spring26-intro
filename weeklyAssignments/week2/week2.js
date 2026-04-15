@@ -109,11 +109,6 @@ console.log("Q2: ", pyramidCounting(4));
 // PUT YOUR CODE HERE
 // in the example log / output above, adventurous it is passed in as a variable and not a string, so I will create my own for variable and string and test both
 function noVowels(phrase){
-    /* TODO:
-    // handle edge case: no vowels
-    // handle edge case: all vowels
-    */
-
     // edge case: empty strings
     if (phrase.length === 0) return "Please provide a word or phrase";
 
@@ -137,12 +132,20 @@ function noVowels(phrase){
         }
     }
 
+    // creating a results variable, since I will be using this multiple times
+    let results = phraseArray.join("");
+
     // edge case: return a statement ontop of the phrase if no vowel
     if (vowelsCount === 0 ){
-        return (`There are no vowels. ${phraseArray.join("")}`);
+        return (`There are no vowels: ${results}`);
+    }
+
+    // handle edge case: all vowels
+    if (results.length === 0){
+        return (`All vowels in this: ${results}`)
     }
     // return back as a string
-    return phraseArray.join("");
+    return results;
 }
 
 // passing in as a variable
