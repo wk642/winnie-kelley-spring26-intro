@@ -76,9 +76,20 @@ repeat(3);
 
 
 //PUT YOUR CODE HERE
+function pyramidCounting(maxNumber){
+    // create variable to store the sum of the numbers
+    let sum = 0;
+    // set up loop to go through numbers from 0 - maxNumber
+    // I could use i<=maxNumber then the sum could just be sum += i
+    for (let i = 0; i < maxNumber; i++) {
+        // add each of the numbers to the sum
+        sum += i + 1;
+        // return
+    }
+    return sum;
+}
 
-
-
+console.log("Q2: ", pyramidCounting(4));
 // ---------- QUESTION 3 ----------
 
 // Write a function called 'noVowels' that take a string parameter and removes vowels from that string using a loop.
@@ -96,9 +107,45 @@ repeat(3);
 
 
 // PUT YOUR CODE HERE
+// in the example log / output above, adventurous it is passed in as a variable and not a string, so I will create my own for variable and string and test both
+function noVowels(phrase){
+    /* TODO:
+    // handle edge case: empty strings
+    // handle edge case: mixed with, uppercase, lowercase, numbers and symbols
+    // handle edge case: no vowels
+    // handle edge case: all vowels
+    */
+    const vowels = "aeiou";
 
+    // based on the instruction of this questions, it states that it wants the vowels to be removed from the string, so I will be making the string into an array first. If it wasn't neccessary, I would not make it into an array and would just store any letter that is not a vowel into a result variable. 
+    let phraseArray = phrase.split("");
 
+    // setting up loop, going to use backwards(--) instead since we are going to be removing things, so the index will shift. or I can create a j variable to have a separate count
+    for (let i = (phraseArray.length - 1); i >= 0; i-- ){
+        if (vowels.includes(phraseArray[i])){
+            // remove the vowel
+            phraseArray.splice(i, 1);
+        }
+    }
 
+    // return back as a string
+    return phraseArray.join("");
+}
+
+// passing in as a variable
+const adventurous = "skydive";
+console.log(`Q3: ${noVowels(adventurous)}`); // skydve
+// passing in as a string
+console.log(`Q3: ${noVowels("adventurous")}`); // dvntrs
+// edge cases:
+// passing in as an empty string
+console.log(`Q3: ${noVowels("")}`); // Please provide a word or phrase
+// mixed with, uppercase, lowercase, numbers and symbols
+console.log(`Q3: ${noVowels("The 1!")}`); // Th 1!
+// if it has no vowels
+console.log(`Q3: ${noVowels("lkjhgfds")}`); // lkjhgfds
+// if it has only vowels
+console.log(`Q3: ${noVowels("aeiou")}`); // They are all vowels
 // ---------- QUESTION 4 ----------
 
 // Write a function called 'vowelCount' that takes 1 string parameter and returns the number of vowels in that string.
