@@ -138,14 +138,13 @@ function noVowels(phrase){
     // edge case: return a statement ontop of the phrase if no vowel
     if (vowelsCount === 0 ){
         return (`There are no vowels: ${results}`);
+    } else if(results.length === 0){
+        // edge case: all vowels
+        return (`All vowels in this: ${phrase}`)
+    } else {
+        // return phrase as string
+        return results
     }
-
-    // handle edge case: all vowels
-    if (results.length === 0){
-        return (`All vowels in this: ${results}`)
-    }
-    // return back as a string
-    return results;
 }
 
 // passing in as a variable
