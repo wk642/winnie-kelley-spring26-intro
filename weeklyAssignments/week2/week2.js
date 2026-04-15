@@ -110,11 +110,14 @@ console.log("Q2: ", pyramidCounting(4));
 // in the example log / output above, adventurous it is passed in as a variable and not a string, so I will create my own for variable and string and test both
 function noVowels(phrase){
     /* TODO:
-    // handle edge case: empty strings
     // handle edge case: mixed with, uppercase, lowercase, numbers and symbols
     // handle edge case: no vowels
     // handle edge case: all vowels
     */
+
+    // edge case: empty strings
+    if (phrase.length === 0) return "Please provide a word or phrase";
+    
     const vowels = "aeiou";
 
     // based on the instruction of this questions, it states that it wants the vowels to be removed from the string, so I will be making the string into an array first. If it wasn't neccessary, I would not make it into an array and would just store any letter that is not a vowel into a result variable. 
@@ -146,6 +149,7 @@ console.log(`Q3: ${noVowels("The 1!")}`); // Th 1!
 console.log(`Q3: ${noVowels("lkjhgfds")}`); // lkjhgfds
 // if it has only vowels
 console.log(`Q3: ${noVowels("aeiou")}`); // They are all vowels
+
 // ---------- QUESTION 4 ----------
 
 // Write a function called 'vowelCount' that takes 1 string parameter and returns the number of vowels in that string.
