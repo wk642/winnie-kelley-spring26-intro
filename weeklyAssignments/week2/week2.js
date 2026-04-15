@@ -119,6 +119,9 @@ function noVowels(phrase){
 
     // variable to store the vowels
     const vowels = "aeiouAEIOU";
+    
+    // handle edge case: no vowels
+    let vowelsCount = 0;
 
     // based on the instruction of this questions, it states that it wants the vowels to be removed from the string, so I will be making the string into an array first. If it wasn't neccessary, I would not make it into an array and would just store any letter that is not a vowel into a result variable. 
     let phraseArray = phrase.split("");
@@ -129,9 +132,15 @@ function noVowels(phrase){
         if (vowels.includes(phraseArray[i])){
             // remove the vowel - because I'm only removing the vowels, it is also keeping all the other cases (edgecase of mixed numbers, symbols and upper and lower case)
             phraseArray.splice(i, 1);
+            // increase no vowels count to handle the edge case of no vowels
+            vowelsCount++;
         }
     }
 
+    // edge case: return a statement ontop of the phrase if no vowel
+    if (vowelsCount === 0 ){
+        return (`There are no vowels. ${phraseArray.join("")}`);
+    }
     // return back as a string
     return phraseArray.join("");
 }
@@ -147,7 +156,7 @@ console.log(`Q3: ${noVowels("")}`); // Please provide a word or phrase
 // mixed with, uppercase, lowercase, numbers and symbols
 console.log(`Q3: ${noVowels("The 1!")}`); // Th 1!
 // if it has no vowels
-console.log(`Q3: ${noVowels("lkjhgfds")}`); // lkjhgfds
+console.log(`Q3: ${noVowels("lkjhgfds")}`); // There are no vowels. lkjhgfds
 // if it has only vowels
 console.log(`Q3: ${noVowels("aeiou")}`); // They are all vowels
 
