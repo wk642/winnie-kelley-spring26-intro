@@ -305,6 +305,19 @@ console.log(`Q6 not empty: ${arrayChecker(full)}`); // false
 
 //  Q7: null
 
+function getElementAt(array, num) {
+    // TODO: edge case: negative numbers
+    // if num is smaller than the length then return the content of the array index
+    if (num >= array.length){
+        return null;
+    }
+    return array[num];
+}
+
+console.log(`Q7: ${getElementAt(full, 2)}`); // candy
+console.log(`Q7: ${getElementAt(full, 7)}`); // null
+// edge case: negative number
+console.log(`Q7: ${getElementAt(full, -1)}`); // null
 
 
 // ---------- QUESTION 8 ----------
