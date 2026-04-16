@@ -272,8 +272,18 @@ console.log(`Q5: edge case: ${numOfOdds(-2)}`);
 
 
 // PUT YOUR CODE HERE
+// create variable empty
+const empty = [];
+// create variable full
+const full = ["dog", "robot", "candy", 1];
 
+function arrayChecker(array){
+    // return ture if empty, false if not empty
+    return array.length === 0;
+}
 
+console.log(`Q6 empty: ${arrayChecker(empty)}`); // true
+console.log(`Q6 not empty: ${arrayChecker(full)}`); // false
 
 // ---------- QUESTION 7 ----------
 
