@@ -179,8 +179,28 @@ console.log(`Q3: ${noVowels("aeiou")}`); // They are all vowels
 
 
 // PUT YOUR CODE HERE
+function vowelCount(phrase){
+    // create a variable to store vowelsl
+    const vowels = "aeiou";
 
+    // create variable count to track number of vowels
+    let count = 0;
 
+    // create variable to store phrase in all lowercase so we can just check the lowercase
+    const phraseLowerCase = phrase.toLowerCase();
+
+    // set up loop
+    for (let i = 0; i < phraseLowerCase.length; i++){
+        if (vowels.includes(phraseLowerCase[i])){
+            count++;
+        }
+    }
+
+    // return the count
+    return count;
+}
+
+console.log("Q4: ", vowelCount('I love to code.'));
 
 // ---------- QUESTION 5 ----------
 
