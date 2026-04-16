@@ -154,13 +154,13 @@ console.log(`Q3: ${noVowels(adventurous)}`); // skydve
 console.log(`Q3: ${noVowels("adventurous")}`); // dvntrs
 // edge cases:
 // passing in as an empty string
-console.log(`Q3: ${noVowels("")}`); // Please provide a word or phrase
+console.log(`Q3: edge case: ${noVowels("")}`); // Please provide a word or phrase
 // mixed with, uppercase, lowercase, numbers and symbols
-console.log(`Q3: ${noVowels("The 1!")}`); // Th 1!
+console.log(`Q3: edge case: ${noVowels("The 1!")}`); // Th 1!
 // if it has no vowels
-console.log(`Q3: ${noVowels("lkjhgfds")}`); // There are no vowels. lkjhgfds
+console.log(`Q3: edge case: ${noVowels("lkjhgfds")}`); // There are no vowels. lkjhgfds
 // if it has only vowels
-console.log(`Q3: ${noVowels("aeiou")}`); // They are all vowels
+console.log(`Q3: edge case: ${noVowels("aeiou")}`); // They are all vowels
 
 // ---------- QUESTION 4 ----------
 
@@ -200,7 +200,15 @@ function vowelCount(phrase){
     return count;
 }
 
-console.log("Q4: ", vowelCount('I love to code.'));
+console.log(`Q4: ${vowelCount("I love to code.")}`); // 6
+// edge cases
+// empty
+console.log(`Q4: edge case: ${vowelCount("")}`); // 0
+// no vowels
+console.log(`Q4: edge case: ${vowelCount("lkjhgfds")}`); // 0
+// all vowels
+console.log(`Q4: edge case: ${vowelCount("aeiou")}`); // 5
+
 
 // ---------- QUESTION 5 ----------
 
