@@ -232,8 +232,10 @@ function numOfOdds(num) {
     // return Math.floor((num + 1) / 2);
     // create a variable to store count
     let count = 0;
+    // edge case: negative numbers, using Math.abs so negative numbers will be the same as positive
+    const numAbs = Math.abs(num);
     // set up loop
-    for (let i = 1; i <= num; i++){
+    for (let i = 0; i <= numAbs; i++){
         // if %2 === 1 means there's a 1 remainder after division = odd number 
         if (i % 2 === 1 ){
             // increase count
@@ -243,6 +245,11 @@ function numOfOdds(num) {
     return count;
 }
 console.log(`Q5: ${numOfOdds(15)}`);
+// edge cases
+// 0 should also be even
+console.log(`Q5: edge case: ${numOfOdds(0)}`);
+// negative numbers
+console.log(`Q5: edge case: ${numOfOdds(-2)}`);
 
 // ---------- QUESTION 6 ----------
 
