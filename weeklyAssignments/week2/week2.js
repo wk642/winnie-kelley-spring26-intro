@@ -316,8 +316,11 @@ function getElementAt(array, num) {
 
 console.log(`Q7: ${getElementAt(full, 2)}`); // candy
 console.log(`Q7: ${getElementAt(full, 7)}`); // null
-// edge case: negative number
-console.log(`Q7: ${getElementAt(full, -1)}`); // null
+// edge case: 
+// negative number
+console.log(`Q7: edge case: ${getElementAt(full, -1)}`); // null
+// empty array
+console.log(`Q7: edge case: ${getElementAt(empty, 0)}`); // null
 
 
 // ---------- QUESTION 8 ----------
