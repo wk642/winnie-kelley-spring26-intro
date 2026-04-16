@@ -306,9 +306,9 @@ console.log(`Q6 not empty: ${arrayChecker(full)}`); // false
 //  Q7: null
 
 function getElementAt(array, num) {
-    // TODO: edge case: negative numbers
     // if num is smaller than the length then return the content of the array index
-    if (num >= array.length){
+    // edge case: negative numbers - adding an additonal conditional to make sure that the number passed in has to be 0 or greater
+    if (num >= array.length || num <= 0){
         return null;
     }
     return array[num];
