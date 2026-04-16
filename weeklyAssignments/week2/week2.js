@@ -227,8 +227,22 @@ console.log(`Q4: edge case: ${vowelCount("aeiou")}`); // 5
 
 
 // PUT YOUR CODE HERE
-
-
+function numOfOdds(num) {
+    // Doing a loop here, just to match the topic of what we are learning, but if not I would just do it this way:
+    // return Math.floor((num + 1) / 2);
+    // create a variable to store count
+    let count = 0;
+    // set up loop
+    for (let i = 1; i <= num; i++){
+        // if %2 === 1 means there's a 1 remainder after division = odd number 
+        if (i % 2 === 1 ){
+            // increase count
+            count++;
+        }
+    }
+    return count;
+}
+console.log(`Q5: ${numOfOdds(15)}`);
 
 // ---------- QUESTION 6 ----------
 
