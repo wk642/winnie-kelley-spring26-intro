@@ -284,7 +284,17 @@ console.log(`Q7: edge case: ${getElementAt(empty, 0)}`); // null
 
 // PUT YOUR CODE HERE
 
+function insertInArray(array){
+    // make a copy of the array
+    let newArray = array.slice();
+    // insert '0' to the second position  in the new array
+    newArray.splice(1, 0, 0);
+    // return the new array
+    return newArray;
+}
 
+console.log(`Q8: ${insertInArray(full)}`);
+console.log(`original array: ${full}`);
 
 // ---------- QUESTION 9 ----------
 
@@ -311,8 +321,31 @@ console.log(`Q7: edge case: ${getElementAt(empty, 0)}`); // null
 //  Q9 different: false
 
 // PUT YOUR CODE HERE
+function compareArrays(array1, array2){
+    // create a variable compare (identical to full)
+    const compare = ["dog", "robot", "candy", 1];
 
+    // create a variable part (patial copy of full)
+    const part = ["dog", "robot"];
 
+    // returning false if the two arrays have different lengths. 
+    if (array1.length !== array2.length){
+        return false;
+    } else {
+        // setup loop
+        for (let i = 0; i < array1.length; i++) {
+            // compare each part, return false if not identical
+            if (array1[i] !== array2[i]){
+                return false
+            }
+        }
+        return true;
+    }
+}
+
+console.log(`Q9: same: ${compareArrays(full, compare)}`); // true
+console.log(`Q9: different: ${compareArrays(full, empty)}`); // false
+console.log(`Q9: partial: ${compareArrays(full, part)}`); // false
 
 // ---------- QUESTION 10 ----------
 
