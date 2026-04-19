@@ -321,12 +321,12 @@ console.log(`original array: ${full}`);
 //  Q9 different: false
 
 // PUT YOUR CODE HERE
-function compareArrays(array1, array2){
-    // create a variable compare (identical to full)
-    const compare = ["dog", "robot", "candy", 1];
+// create a variable compare (identical to full)
+const compare = ["dog", "robot", "candy", 1];
 
-    // create a variable part (patial copy of full)
-    const part = ["dog", "robot"];
+// create a variable part (patial copy of full)
+const part = ["dog", "robot"];
+function compareArrays(array1, array2){
 
     // returning false if the two arrays have different lengths. 
     if (array1.length !== array2.length){
@@ -358,6 +358,22 @@ console.log(`Q9: partial: ${compareArrays(full, part)}`); // false
 //  Q10: 17
 
 // PUT YOUR CODE HERE
+// create array numbers 
+const numbers = [3, 4, 2 ,8]
+
+function calculateTotal(numberArray){
+    // create variable to store results
+    let results = 0; 
+    // set up loop
+    for (let i = 0; i < numberArray.length; i++){
+        // add number to results
+        results += numberArray[i];
+    }
+    return results
+}
+
+// console.log("Q10: ", calculateTotal(numbers));
+console.log(`Q10: ${calculateTotal(numbers)}`);
 
 // ---------- QUESTION 11 ----------
 
