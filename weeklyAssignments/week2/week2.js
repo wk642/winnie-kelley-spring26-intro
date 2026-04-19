@@ -390,36 +390,44 @@ console.log(`Q10: ${calculateTotal(numbers)}`);
 //  Q11 odds: [3,19,7,93]
 
 // PUT YOUR CODE HERE
+/* the instructions aren't clear on if the goal is to 
+    A. make a copy using .slice() then store results in another array that is created, 
+    or 
+    B, make a copy using slice and then editing that information in that array and return it
+
+    because I'm unsure, I will be doing option B.
+
+*/
 function findEvens(arrayNumbers) {
     // returns new array of all even numbers
-    const evenNumbers = [];
+    const arrayNumbersCopy = arrayNumbers.slice();
 
-    // setup loop
-    for (let i = 0; i < arrayNumbers.length; i++){
-        // if %2 is 0 = even
-        if (arrayNumbers[i] % 2 === 0){
-            // push to evenNumbers
-            evenNumbers.push(arrayNumbers[i]);
+    // setup loop, go backwards since we are manipulating this copied array
+    for (let i = arrayNumbersCopy.length; i >= 0; i--){
+        // if %2 is not 0, 
+        if (arrayNumbersCopy[i] % 2 !== 0){
+            // use .splice to remove the odd number
+            arrayNumbersCopy.splice(i, 1);
         }
     }
     
-    return evenNumbers;
+    return arrayNumbersCopy;
 }
 
 function findOdds(arrayNumbers){
     // returns new array of all odd numbers
-    const oddNumbers = [];
+    const arrayNumbersCopy = arrayNumbers.slice();
 
-    // setup loop
-    for (let i = 0; i < arrayNumbers.length; i++){
-        // if %2 is 1 = odd
-        if (arrayNumbers[i] % 2 === 1){
-            // push to oddNumbers
-            oddNumbers.push(arrayNumbers[i]);
+    // setup loop, go backwards since we are manipulating this copied array
+    for (let i = arrayNumbersCopy.length; i >= 0; i--){
+        // if %2 is 0
+        if (arrayNumbersCopy[i] % 2 === 0){
+            // use .splice to remove the even number
+            arrayNumbersCopy.splice(i, 1);
         }
     }
-    
-    return oddNumbers;
+
+    return arrayNumbersCopy;
 }
 
 console.log(`Q11 evens: ${findEvens([10,2,3,19,7,6,93])}`);
@@ -428,6 +436,7 @@ console.log(`Q11 odds: ${findOdds([10,2,3,19,7,6,93])}`);
 // check to make sure negative numbers work too
 console.log(`Q11 evens: ${findEvens([-10,-2,3,19,7,6,93])}`);
 console.log(`Q11 odds: ${findOdds([-10,-2,3,19,7,6,93])}`);
+
 // ---------- QUESTION 12 ----------
 
 // Write a function called 'makeSquares' that takes one array parameter and returns a NEW Array with the squared values of each of the numbers. NOTE: Assigning an array to a new variable does not make a copy, it's another reference to the same array. To make a copy you can use the slice() method as in this example:
