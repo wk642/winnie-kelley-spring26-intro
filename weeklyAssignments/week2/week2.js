@@ -451,6 +451,21 @@ console.log(`Q11 odds: ${findOdds([-10,-2,3,19,7,6,93])}`);
 
 // PUT YOUR CODE HERE
 
+function makeSquares(array){
+    // create a copy of the array 
+    let results = [];
+
+    // setup loop
+    for (let i = 0; i < array.length; i++){
+        // squares the number
+        // pushes it to results
+        results.push(array[i]*array[i]);
+    }
+
+    return results;
+}
+
+console.log(`Q12: ${makeSquares([2,5,8])}`);
 // ---------- QUESTION 13 ----------
 
 // Write a function called 'displaySkills' that takes an array of string values that correspond to skills that you have.
