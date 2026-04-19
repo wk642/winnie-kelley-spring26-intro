@@ -426,6 +426,8 @@ console.log(`Q11 evens: ${findEvens([10,2,3,19,7,6,93])}`);
 console.log(`Q11 odds: ${findOdds([10,2,3,19,7,6,93])}`);
 // edge case
 // check to make sure negative numbers work too
+console.log(`Q11 evens: ${findEvens([-10,-2,3,19,7,6,93])}`);
+console.log(`Q11 odds: ${findOdds([-10,-2,3,19,7,6,93])}`);
 // ---------- QUESTION 12 ----------
 
 // Write a function called 'makeSquares' that takes one array parameter and returns a NEW Array with the squared values of each of the numbers. NOTE: Assigning an array to a new variable does not make a copy, it's another reference to the same array. To make a copy you can use the slice() method as in this example:
