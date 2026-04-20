@@ -466,6 +466,7 @@ function makeSquares(array){
 }
 
 console.log(`Q12: ${makeSquares([2,5,8])}`);
+
 // ---------- QUESTION 13 ----------
 
 // Write a function called 'displaySkills' that takes an array of string values that correspond to skills that you have.
@@ -484,10 +485,21 @@ console.log(`Q12: ${makeSquares([2,5,8])}`);
 //  GitHub
 
 // PUT YOUR CODE HERE
+function displaySkills(skillsArray){
+    console.log(`Q13: `)
+    // set up loop
+    for (let i = 0; i < skillsArray.length; i++){
+        // print each skill as an array
+        console.log(skillsArray[i]);
+    }
+}
+const skills = ["JavaScript", "HTML", "CSS", "Adobe Photoshop", "GitHub"];
+
+displaySkills(skills);
 
 // ---------- QUESTION 14 ----------
 
-// Back in the "old days", the early 2000s, this was a famous technical interview question. Write a function definition that takes NO parameters. The function will loop from 1 to 15 and return an array of numbers. While looping, the function will check if the current value in the loop is divisible by 3, by 5, or by both. If the current value in the loop is divisible by 3, the function will add the string "fizz" to an array. If the current value in the loop is divisible by 5, the function will add the string "buzz" to the array. If the current value in the loop is divisible by both, the function will add the value "fizzbuzz" to the array. If the number isn't divisible by 3, 5, OR both, it will add the number to the array. The function will return the array of values.
+// Back in the "old days", the early 2000s, this was a famous technical interview question. Write a function definition that takes NO parameters. The function will loop from 1 to 15 and ret   urn an array of numbers. While looping, the function will check if the current value in the loop is divisible by 3, by 5, or by both. If the current value in the loop is divisible by 3, the function will add the string "fizz" to an array. If the current value in the loop is divisible by 5, the function will add the string "buzz" to the array. If the current value in the loop is divisible by both, the function will add the value "fizzbuzz" to the array. If the number isn't divisible by 3, 5, OR both, it will add the number to the array. The function will return the array of values.
 
 // EXAMPLE LOG:
 //  console.log("Q13: ", fizzBuzz();
