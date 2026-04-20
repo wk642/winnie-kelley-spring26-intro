@@ -508,6 +508,32 @@ displaySkills(skills);
 //  Q14: [1,2,'fizz',4,'buzz','fizz',7,8,'fizz','buzz',11,'fizz',13,14,'fizzbuzz']
 
 // PUT YOUR CODE HERE
+function fizzbuzz(){
+    // create variable to store results
+    let results = [];
+
+    // loop from 1 - 15
+    for (let i = 1; i <= 15; i++){
+        // if divisible by both = fizzbuzz
+        if ((i % 3 === 0) && (i % 5 === 0)){
+            results.push("fizzbuzz");
+        } else if (i % 3 === 0) {
+            // if divisible by 3 = fizz
+            results.push("fizz");
+        } else if (i % 5 === 0) {
+            // if divisible by 5 = buzz
+            results.push("buzz");
+        } else {
+            // if not divisible add number to array
+            results.push(i);
+        }
+    }
+
+    // return array of numbers 
+    return results;
+}
+
+console.log(`Q14: ${fizzbuzz()}`);
 
 // ---------- QUESTION 15 ----------
 
