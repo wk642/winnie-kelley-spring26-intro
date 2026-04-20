@@ -403,7 +403,7 @@ function findEvens(arrayNumbers) {
     const arrayNumbersCopy = arrayNumbers.slice();
 
     // setup loop, go backwards since we are manipulating this copied array
-    for (let i = arrayNumbersCopy.length; i >= 0; i--){
+    for (let i = arrayNumbersCopy.length - 1; i >= 0; i--){
         // if %2 is not 0, 
         if (arrayNumbersCopy[i] % 2 !== 0){
             // use .splice to remove the odd number
@@ -419,7 +419,7 @@ function findOdds(arrayNumbers){
     const arrayNumbersCopy = arrayNumbers.slice();
 
     // setup loop, go backwards since we are manipulating this copied array
-    for (let i = arrayNumbersCopy.length; i >= 0; i--){
+    for (let i = arrayNumbersCopy.length - 1; i >= 0; i--){
         // if %2 is 0
         if (arrayNumbersCopy[i] % 2 === 0){
             // use .splice to remove the even number
