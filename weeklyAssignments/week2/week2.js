@@ -33,7 +33,7 @@
 function repeat(number) {
     console.log(`Q1:`);
     // set up loop
-    for (let i =0; i < 3; i++){
+    for (let i =0; i < number; i++){
         console.log(`Hello World!`);
     }
 }
