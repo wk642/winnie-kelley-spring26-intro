@@ -548,3 +548,27 @@ console.log(`Q14: ${fizzbuzz()}`);
 // Also, place 2 log statements for the functionVar and blockVar that are commented out, but would result in an error if uncommented - because the variable they are referencing is out of scope.
 
 // PUT YOUR CODE HERE
+// globalVar
+let globalVar = "globarVar";
+console.log(`Q15: ${globalVar} is accessible outside of function`);
+function testScope(){
+    // log that global variable is accessible
+    console.log(`Q15: ${globalVar} is accessible inside of function`);
+    // functionVar
+    let functionVar = "functionVar";
+    console.log(`Q15: ${functionVar} is accessible inside of function`);
+
+    if (globalVar != functionVar){
+        // blockVar
+        let blockVar = "blockVar";
+        console.log(`Q15: ${blockVar} is accessible inside the conditional`);
+        console.log(`Q15: ${globalVar} is accessible inside of conditional too `);
+        console.log(`Q15: ${functionVar} is accessible inside of conditional as well`);
+    } else {
+        console.log(`unable to access block variable.`)
+    }
+
+    // console.log(`Q15: Won't be able to access blockVar from here: ${blockVar}`); 
+}
+// console.log(`Q15: Won't be able to access functionVar from here: ${functionVar}`); 
+testScope();
