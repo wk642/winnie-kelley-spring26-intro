@@ -87,7 +87,12 @@ for (let property in myPet){
 //Stretch goal: Use "this" keyword. Instead of referencing the object name directly (e.g., myPet.name), update your method to use the this keyword to access the object's properties. This makes your method more flexible and reusable.
 
 // PUT YOUR CODE HERE
+myPet.describe = function(){
+    // construct a sentence using template literal
+    return `${myPet.name} is a ${myPet.color} ${myPet.species}`;
+}
 
+console.log("Q4:", myPet.describe());
 
 //---------- QUESTION 5 ----------
 //Using myPet, remove the property color. Verify the deletion by checking whether the myPet object still has a property named color. It returns true if the property exists and false otherwise
