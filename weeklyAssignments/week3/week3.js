@@ -165,6 +165,21 @@ printPets(pets);
 //Q7: Dog { name: 'Destiny', breed: 'shepherd', age: 14 }
 
 // PUT YOUR CODE HERE
+// create constructor Dog 
+function Dog(name, breed, age){
+    // name, breed, and age. 
+    this.name = name;
+    this.breed = breed;
+    this.age = age;
+}
+
+// create two dogs with different values
+let dog1 = new Dog("Shadow", "shepherd", 3);
+let dog2 = new Dog("Ace", "shiba", 4);
+
+// log both dogs
+console.log("Q7", dog1);
+console.log("Q7", dog2);
 
 //---------- QUESTION 8 ----------
 //Write a function that compares two Dog instances objects and checks if they have the same keys and values. Write a function called areObjectsEqual(obj1, obj2) that returns true if both objects have the same keys and values, and false otherwise. 
