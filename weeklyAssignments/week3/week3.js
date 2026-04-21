@@ -282,3 +282,15 @@ console.log("Q9: Current Date:", currentDate);
 //Q10 Day: 13
 
 // PUT YOUR CODE HERE
+// year
+let year = currentDate.getFullYear();
+
+// month
+let month = currentDate.getMonth();
+
+// day
+let day = currentDate.getDate();
+
+console.log("Q10 Year:", year);
+console.log("Q10 Month:", month);
+console.log("Q10 Day:", day);
