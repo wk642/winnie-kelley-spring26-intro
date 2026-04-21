@@ -202,6 +202,51 @@ console.log("Q7", dog2);
 //Q8: Are objects equal? - different keys: false
 
 // PUT YOUR CODE HERE
+// create dog 3 and dog 4
+// dog3 is the same as dog 1
+let dog3 = new Dog(dog1.name, dog1.breed, dog1.age);
+
+// dog 4 is dog1 plus one additional key
+let dog4 = new Dog(dog1.name, dog1.breed, dog1.age);
+// additional key
+dog4.size = "small";
+
+// function to compare two Dog instances - areObjectsEqual(obj1, obj2)
+function areObjectsEqual(obj1, obj2){
+    // check if they have same keys AND values
+    // get all keys from obj1
+    const obj1keys = Object.keys(obj1);
+    // get all keys from obj2
+    const obj2keys = Object.keys(obj2);
+    
+    // check keys: if length of keys are not the same return false
+    if (obj1keys.length !== obj2keys.length){
+        return false;
+    }
+
+    // check values:
+    // loop through each key
+    for (let i in obj1keys){
+        // current key - property
+        const currentKey = obj1keys[i];
+
+        // check property: if obj2 does not have currentKey property return false
+        if (!obj2.hasOwnProperty(currentKey)){
+            return false;
+        }
+
+        // check values: if the values don't match return false
+        if (obj1[currentKey] !== obj2[currentKey]){
+            return false;
+        }
+    }
+    // otherwise return true
+    return true;
+}
+
+console.log("Q8: Are objects equal - different values:", areObjectsEqual(dog1, dog2));
+console.log("Q8: Are objects equal? - same key and values:", areObjectsEqual(dog1, dog3));
+console.log("Q8: Are objects equal? - different keys:", areObjectsEqual(dog1, dog4));
 
 //---------- QUESTION 9 ----------
 //Learn how to use the built-in Date object in JavaScript to retrieve and display the current date. See https://www.w3schools.com/js/js\_dates.asp as a reference. Create a variable called currentDate. Assign it the value of a new Date() object.
