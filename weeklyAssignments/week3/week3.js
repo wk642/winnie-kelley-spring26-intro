@@ -258,7 +258,10 @@ console.log("Q8: Are objects equal? - different keys:", areObjectsEqual(dog1, do
 //Q9: Current Date: 2025-09-13T23:47:23.858Z 
 
 // PUT YOUR CODE HERE
+// create currentDate
+let currentDate = new Date();
 
+console.log("Q9: Current Date:", currentDate);
 
 //---------- QUESTION 10 ----------
 //Use JavaScript's Date object to retrieve specific parts of the current date. Using the currentDate from Question 9, write three separate lines of code to extract:
