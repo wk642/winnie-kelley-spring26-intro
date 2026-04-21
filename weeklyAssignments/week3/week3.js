@@ -128,7 +128,25 @@ console.log("Q5", "Color property deleted:", !myPet.hasOwnProperty('color'));
 //{ name: 'Sunny', species: 'dog', color: 'black' }
 
 // PUT YOUR CODE HERE
+// create variable pets - has an array of 3 pet objects
+const pets = [
+    // name, species, color
+    { name: "Shadow", species: "dog", color: "brown"},
+    { name: "Ghost", species: "puppy", color: "black"},
+    { name: "Tiger", species: "cat", color: "orange"},
+]
 
+// create function printPets
+function printPets(pets){
+    // create loop using forEach, to go through each pet 
+    pets.forEach((pet) => {
+        // log each pet's detail out
+        console.log(pet);
+    })
+}
+
+console.log ("Q6:");
+printPets(pets);
 
 //---------- QUESTION 7 ----------
 //Write a JavaScript constructor function named Dog that defines a blueprint for creating Dog objects. Each Dog object should include the following properties: name, breed, and age. Using this constructor, create two distinct Dog instances with different values for each property. Finally, use console.log() to display both Dog instances in the console.
