@@ -26,7 +26,20 @@
 //  Q1 color: brown
 
 // PUT YOUR CODE HERE
-function 
+// create object myPet
+const myPet = {
+    // name
+    name: "Shadow",
+    // species
+    species: "dog",
+    // color
+    color: "brown",
+};
+console.log("Q1 object: ", myPet);
+console.log("Q1 name: ", myPet.name);
+console.log("Q1 species: ", myPet.species);
+console.log("Q1 color: ", myPet.color);
+
 // ---------- QUESTION 2 ---------
 // Now let's see how we can modify the properties. Modify the 'name' property of the 'myPet' object. This name should be different than the value used in Question 1 (e.g. Henry ). Use your console.log's to print the myPet console. Verify the 'name' property is different than the value in Question 1.
 
@@ -36,7 +49,8 @@ function
 //  Q2 updated object: {"name":"Henry","species":"ferret","color":"brown"}
 
 // PUT YOUR CODE HERE
-
+myPet.name = "Ghost";
+console.log("Q2 updated object", myPet);
 
 // ---------- QUESTION 3 ---------
 // Now let's see how we can loop thru the properties - this is a common task in JavaScript. Use a for...in loop, a special type of loop in JavaScript designed specifically for iterating over the properties of an object. See https://www.w3schools.com/js/js\_loop\_forin.asp for reference.
@@ -52,7 +66,11 @@ function
 //  Q3: color: brown
 
 // PUT YOUR CODE HERE
-
+// create for...in loop
+for (let property in myPet){
+    // goes through each property in loop
+    console.log("Q3: "+ property + ":", myPet[property]);
+}
 
 // ---------- QUESTION 4 ----------
 //Let’s explore how to work with object data inside a function. Your task is to define a method called 'describe' in the myPet object. This method should take no parameters and return a sentence using a template literal that describes your pet using its properties.
