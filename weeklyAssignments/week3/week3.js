@@ -89,7 +89,9 @@ for (let property in myPet){
 // PUT YOUR CODE HERE
 myPet.describe = function(){
     // construct a sentence using template literal
-    return `${myPet.name} is a ${myPet.color} ${myPet.species}`;
+    // return `${myPet.name} is a ${myPet.color} ${myPet.species}`;
+    // stretch goal - use "this keyword"
+    return `${this.name} is a ${this.color} ${this.species}`;
 }
 
 console.log("Q4:", myPet.describe());
