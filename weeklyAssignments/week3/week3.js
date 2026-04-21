@@ -103,7 +103,10 @@ console.log("Q4:", myPet.describe());
 //   console.log("Q5", "Color property deleted:", !myPet.hasOwnProperty('color'));
 // EXAMPLE OUTPUT:
 //Q5 Color property deleted: true
+// delete color property from myPet
+delete myPet.color;
 
+console.log("Q5", "Color property deleted:", !myPet.hasOwnProperty('color'));
 
 //---------- QUESTION 6 ----------
 //Create a variable named pets and assign it an array containing three pet objects. Each object should include three properties: name, species, and color with appropriate values. Then, define a function called printPets that uses the forEach method to loop through the array and log each pet’s details to the console. Note: console.log is called within the function
