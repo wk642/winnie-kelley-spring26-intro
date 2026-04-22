@@ -102,7 +102,14 @@ console.log("Q3 tipCalculator: 50, 0.20", tipCalculator (50, .20));
 
 // PUT YOUR CODE HERE
 
+let num1 = 6;
+let num2 = 42; 
 
+function multiplyThese(num1, num2){
+    return num1 * num2;
+}
+
+console.log("Q4: ", num1, num2, multiplyThese(num1, num2));
 
 // ---------- QUESTION 5 ----------
 // Create a function called 'getAverage' that takes 2 parameters and returns their average. NOTE: In some programming languages, the types of numbers you use in equations can effect what type of number (integer/floating point) you get as a result. We suggest using 2.0 instead of 2 as you're calculating the average.
