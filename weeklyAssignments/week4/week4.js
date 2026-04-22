@@ -35,9 +35,7 @@ console.log("Q1 convertTemp: ", celsiusTemp, convertTemp(celsiusTemp));
 
 // Call reverseString with several different strings. Make sure it works for an empty string.
 
-// PUT YOUR CODE HERE
-
-
+// PUT YOUR CODE HER
 // ---------- QUESTION 3 ----------
 // Let's make a useful math problem - create a tip calculator! Create a function named tipCalculator that takes two parameters - billTotal and tipPercentage.  Return the total bill amount
 
