@@ -56,19 +56,19 @@ console.log("Q2 reverseString: ", inputString, reverseString(inputString));
 // edge cases:
 // empty string
 inputString = ""; // blank
-console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+console.log("Q2 reverseString: edge case: ", inputString, reverseString(inputString));
 // with spaces
 inputString = "Detective Pikachu"; // uhcakiP evitceteD
-console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+console.log("Q2 reverseString: edge case: ", inputString, reverseString(inputString));
 // just spaces
 inputString = " "; // spaces
-console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+console.log("Q2 reverseString: edge case: ", inputString, reverseString(inputString));
 // numbers
 inputString = "123456"; //654321
-console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+console.log("Q2 reverseString: edge case: ", inputString, reverseString(inputString));
 // mixed numbers, letters and symbols
 inputString = "Question #2!"; // !2# noitseuQ
-console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+console.log("Q2 reverseString: edge case: ", inputString, reverseString(inputString));
 
 // ---------- QUESTION 3 ----------
 // Let's make a useful math problem - create a tip calculator! Create a function named tipCalculator that takes two parameters - billTotal and tipPercentage.  Return the total bill amount
@@ -81,7 +81,16 @@ console.log("Q2 reverseString: ", inputString, reverseString(inputString));
 // PUT YOUR CODE HERE
 
 // Don't forget your console.logs!
+function tipCalculator(billTotal, tipPercentage){
+    // tip is billTotal * tip Percentage
+    // add that to the bill total and return it
+    return billTotal + (billTotal * tipPercentage);
+}
 
+console.log("Q3 tipCalculator: 20, 0.20", tipCalculator (20, .20));
+
+// to get the example output: 
+console.log("Q3 tipCalculator: 50, 0.20", tipCalculator (50, .20));
 
 // ---------- QUESTION 4 ----------
 // Create two variables named 'num1' and 'num2' and assign them integer values. Create a function called 'multiplyThese' that takes 2 parameters and returns the product of the two parameters (as a reminder, a product is the resulting number when two numbers are multiplied together).
