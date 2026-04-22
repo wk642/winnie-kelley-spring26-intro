@@ -50,7 +50,24 @@ function reverseString(phrase){
     return phraseReversed;
 }
 
-inputString = "HelloWorld";
+let inputString = "HelloWorld";
+console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+
+// edge cases:
+// empty string
+inputString = ""; // blank
+console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+// with spaces
+inputString = "Detective Pikachu"; // uhcakiP evitceteD
+console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+// just spaces
+inputString = " "; // spaces
+console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+// numbers
+inputString = "123456"; //654321
+console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+// mixed numbers, letters and symbols
+inputString = "Question #2!"; // !2# noitseuQ
 console.log("Q2 reverseString: ", inputString, reverseString(inputString));
 
 // ---------- QUESTION 3 ----------
