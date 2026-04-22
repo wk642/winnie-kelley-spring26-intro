@@ -35,7 +35,24 @@ console.log("Q1 convertTemp: ", celsiusTemp, convertTemp(celsiusTemp));
 
 // Call reverseString with several different strings. Make sure it works for an empty string.
 
-// PUT YOUR CODE HER
+// PUT YOUR CODE HERE
+function reverseString(phrase){
+    // variable to store reversed string
+    let phraseReversed = "";
+    
+    // create a loop to go from the last letter to the first. 
+    // using a backwards loop for this
+    for (let i = phrase.length - 1; i >= 0; i--){
+        // add each letter to phraseReversed
+        phraseReversed += phrase[i];
+    }
+
+    return phraseReversed;
+}
+
+inputString = "HelloWorld";
+console.log("Q2 reverseString: ", inputString, reverseString(inputString));
+
 // ---------- QUESTION 3 ----------
 // Let's make a useful math problem - create a tip calculator! Create a function named tipCalculator that takes two parameters - billTotal and tipPercentage.  Return the total bill amount
 
