@@ -372,10 +372,11 @@ function printClassResult(className, student, scores){
     let isPassed = passed(grade) ? "yes" : "no";
 
     // log out all of the details
-    return (`${className} - ${student}, Average: ${average}, Grade ${grade}, Passed: ${isPassed}`);
+    return (`${className} - Student: ${student}, Average: ${average}, Grade ${grade}, Passed: ${isPassed}`);
 }
 
-console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 85, 87]));  
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 85, 87]));
+
 // ---------- QUESTION 12 ----------
 // Now, let's see how to use a callback. First, create a function that simulates pushing a button. Name the function buttonPushed and log the message "The button was pushed!" in the function.
 
