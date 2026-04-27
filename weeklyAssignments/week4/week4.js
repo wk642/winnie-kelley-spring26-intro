@@ -362,8 +362,20 @@ console.log("Q10 passed('Q'): ", passed("Q")); // false
 //  Q11: History 101 - Student: Jane Doe, Average: 75.5, Grade: C, Passed: yes
 
 // PUT YOUR CODE HERE
+function printClassResult(className, student, scores){
+    // create variables to store their average, grade and passed or not passed
+    // passing in score to calculate average
+    let average = calculateAverage(scores);
+    // use the above average calculated to get grade
+    let grade = getLetterGrade(average);
+    // determine pass or not using grade, if true = yes; false = no;
+    let isPassed = passed(grade) ? "yes" : "no";
 
+    // log out all of the details
+    return (`${className} - ${student}, Average: ${average}, Grade ${grade}, Passed: ${isPassed}`);
+}
 
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 85, 87]));  
 // ---------- QUESTION 12 ----------
 // Now, let's see how to use a callback. First, create a function that simulates pushing a button. Name the function buttonPushed and log the message "The button was pushed!" in the function.
 
