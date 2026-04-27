@@ -21,10 +21,17 @@ function convertTemp(celsius){
 }
 
 // creating variable of temperature
-const celsiusTemp = 0;
+let celsiusTemp = 0;
 
 // log both input and output values
 console.log("Q1 convertTemp: ", celsiusTemp, convertTemp(celsiusTemp));
+
+// adding more temps for testing
+celsiusTemp = 10;
+console.log("Q1 convertTemp: additional temps", celsiusTemp, convertTemp(celsiusTemp));
+celsiusTemp = -10;
+console.log("Q1 convertTemp: additional temps", celsiusTemp, convertTemp(celsiusTemp));
+
 // ---------- QUESTION 2 ----------
 // Create a function called 'reverseString' that takes 1 string parameter and returns the reverseString. Use a for loop. Log both the input and output values.
 
