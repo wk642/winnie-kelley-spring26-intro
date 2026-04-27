@@ -285,7 +285,35 @@ console.log("Q8 calculateAverage: empty array", calculateAverage(scores));
 //  Q9 getLetterGrade(95): A
 
 // PUT YOUR CODE HERE
+function getLetterGrade(average){
+    // error handling / edge case: grade is above 100
+    if (average > 100){
+        return `Above A!!! They scored ${average}`;
+    } else if (average >= 90 && average <= 100){
+        // A: 90–100
+        return "A";
+    } else if (average >= 80){
+        // B: 80-89
+        return "B";
+    } else if (average >= 70){
+        // C: 70–79
+        return "C";
+    } else if (average >= 60){
+        // D: 60–69
+        return "D";
+    } else {
+        // F: below 60
+        return "F";
+    }
 
+}
+
+console.log("Q9 getLetterGrade: ", getLetterGrade(95));
+console.log("Q9 getLetterGrade: ", getLetterGrade(85));
+console.log("Q9 getLetterGrade: ", getLetterGrade(75));
+console.log("Q9 getLetterGrade: ", getLetterGrade(65));
+console.log("Q9 getLetterGrade: ", getLetterGrade(55));
+console.log("Q9 getLetterGrade: ", getLetterGrade(145));
 
 // ---------- QUESTION 10 ----------
 // Create a 3rd function named - passed(letterGrade) - that returns true if a student's grade is A, B or C, false otherwise. Make sure you handle a value other than A,B,C,D or F passed in.
