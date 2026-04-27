@@ -379,7 +379,7 @@ function printClassResult(className, student, scores){
     let isPassed = passed(grade) ? "yes" : "no";
 
     // log out all of the details
-    return (`${className} - Student: ${student}, Average: ${average}, Grade ${grade}, Passed: ${isPassed}`);
+    return (`${className} - Student: ${student}, Average: ${average}, Grade: ${grade}, Passed: ${isPassed}`);
 }
 
 console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 85, 87]));
