@@ -387,7 +387,12 @@ console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 85, 8
 //  Q12, Q13: The button was pushed!
 
 // PUT YOUR CODE HERE
+function buttonPushed(){
+    // just return the message
+    return console.log("Q12: The button was pushed!")
+}
 
+buttonPushed();
 
 // ---------- QUESTION 13 ----------
 // Now, create a function called simulateButtonPush and pass the function created in question 12 to that function.
