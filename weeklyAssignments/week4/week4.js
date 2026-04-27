@@ -200,6 +200,24 @@ console.log("Q6 isPrime: ", number, isPrime(number));
 //  Q7 getPrimesUpTo: 13 [2,3,5,7,11,13]
 
 // PUT YOUR CODE HERE
+function getPrimesUpTo(number){
+    // create an empty array to store the prime numbers
+    let primeNumbersResults = [];
+
+    // 0, 1 are not prime, start loop at 2
+    for (let i = 2; i <= number; i++){
+        // using isPrime function from question 6
+        // if the function come back to true
+        if (isPrime(i)){
+            // add the number to the array
+            primeNumbersResults.push(i);
+        }
+    }
+    return primeNumbersResults;
+}
+
+number = 13;
+console.log("Q7 getPrimesUpTo: ", number, getPrimesUpTo(number));
 
 
 // ---------- QUESTION 8 ----------
