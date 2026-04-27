@@ -106,6 +106,7 @@ let num1 = 6;
 let num2 = 42; 
 
 function multiplyThese(num1, num2){
+    // multiple the two numbers
     return num1 * num2;
 }
 
@@ -121,7 +122,13 @@ console.log("Q4: ", num1, num2, multiplyThese(num1, num2));
 
 // PUT YOUR CODE HERE
 
+function getAverage(num1, num2){
+    // get average
+    return (num1 + num2) / 2;
 
+}
+
+console.log("Q5 getAverage: ", 3, 6, getAverage(3.0, 6.0));
 
 // ---------- QUESTION 6 ----------
 // Create a function named 'isPrime' that returns true or false based on whether the number is prime or not.
@@ -135,6 +142,53 @@ console.log("Q4: ", num1, num2, multiplyThese(num1, num2));
 
 // PUT YOUR CODE HERE
 
+function isPrime(number){
+    // 0, 1 are not prime
+    if (number < 2) {
+        return false;
+    }
+
+    // divisible by 2
+    // up to square root of number
+    for (let i = 2; i <= Math.sqrt(number); i++){
+        // if it's divisible with no remainer, not prime
+        if (number % i === 0){
+            return false;
+        }
+    }
+    // otherwise prime number
+    return true;
+}
+let number;
+
+number = 0; // false
+console.log("Q6 isPrime: ", number, isPrime(number)); 
+number = 1; // false
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 2; // true
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 3; // true
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 4; // false
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 5; // true
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 6; // false
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 7; // true
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 8; // false
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 9; // false
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 10; // false
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 11; // true
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 12; // false
+console.log("Q6 isPrime: ", number, isPrime(number));
+number = 13; // true
+console.log("Q6 isPrime: ", number, isPrime(number));
 
 // ---------- QUESTION 7 ----------
 // Using the 'isPrime' function created in the previous question, create another function named 'getPrimesUpTo' that takes an integer as an input and returns an array of all primes up to and including the input number. 
