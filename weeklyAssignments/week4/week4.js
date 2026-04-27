@@ -219,7 +219,6 @@ function getPrimesUpTo(number){
 number = 13;
 console.log("Q7 getPrimesUpTo: ", number, getPrimesUpTo(number));
 
-
 // ---------- QUESTION 8 ----------
 // Now, we're going to write several functions that calculate a student's grade.  
 // First, write a function named 'calculateAverage' that takes an input array of scores and calculates a student's average based on those scores.
@@ -232,7 +231,45 @@ console.log("Q7 getPrimesUpTo: ", number, getPrimesUpTo(number));
 //  Q8 calculateAverage: 85 // input array let scores = [90, 80, 85];
 
 // PUT YOUR CODE HERE
+function calculateAverage(scores){
+    // create variable to score the total of scores
+    let scoresTotal = 0;
+    // create variable to keep the total number of valid scores
+    let validNumbersCount = 0;
 
+    // error handling: empty array
+    if (scores.length === 0){
+        return "There were no scores provided";
+    }
+
+    // loop through array
+    for (let i = 0; i < scores.length; i++){
+        // grade is between 0 - 100
+        if ((scores[i] >= 0) && (scores[i]<= 100)){
+            // increase valid scores numbers by 1
+            validNumbersCount++;
+            // add to sum 
+            scoresTotal += scores[i];
+        }
+    }
+
+    // error handling: no valid scores, 
+    if (validNumbersCount <= 0) {
+        return "The scores provided are not valid.";
+    }
+    return scoresTotal / validNumbersCount;
+}
+
+let scores = [90, 80, 85];
+console.log("Q8 calculateAverage: ", calculateAverage(scores));
+
+// scores that aren't valid to test error message
+scores = [-10, -8, 119];
+console.log("Q8 calculateAverage: invalid numbers", calculateAverage(scores));
+
+// empty array
+scores = [];
+console.log("Q8 calculateAverage: empty array", calculateAverage(scores));
 
 // ---------- QUESTION 9 ----------
 // Now, create a function - getLetterGrade(average) - that takes a grade average and returns a letter grade based on the following scale. Make sure you test with several averages.
