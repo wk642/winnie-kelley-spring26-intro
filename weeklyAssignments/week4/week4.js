@@ -389,7 +389,7 @@ console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 85, 8
 // PUT YOUR CODE HERE
 function buttonPushed(){
     // just return the message
-    return console.log("Q12: The button was pushed!")
+    return console.log("Q12, Q13: The button was pushed!")
 }
 
 buttonPushed();
@@ -404,3 +404,9 @@ buttonPushed();
 //  The button was pushed!
 
 // PUT YOUR CODE HERE
+function simulateButtonPush(buttonPushedFunction){
+    // callback
+    buttonPushedFunction();
+}
+
+simulateButtonPush(buttonPushed);
