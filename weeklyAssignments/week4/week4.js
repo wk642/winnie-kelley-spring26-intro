@@ -324,7 +324,33 @@ console.log("Q9 getLetterGrade: ", getLetterGrade(145));
 //  Q10 passed('A''): true
 
 // PUT YOUR CODE HERE
+function passed(letterGrade){
+    // using switch here, I could use a if else too, I just feel like a switch would be more efficient
+    switch (letterGrade){
+        // A, B, C = pass / true
+        case "A":
+        case "B":
+        case "C":
+            return true;    
+        
+        // D, F = fail / false
+        case "D": 
+        case "F":
+            return false;
+        
+        // other = fail / false
+        default: 
+            return false;
+    }
+}
 
+console.log("Q10 passed('A'): ", passed("A")); // true
+console.log("Q10 passed('B'): ", passed("B")); // true
+console.log("Q10 passed('C'): ", passed("C")); // true
+console.log("Q10 passed('D'): ", passed("D")); // false
+console.log("Q10 passed('F'): ", passed("F")); // false
+console.log("Q10 passed('empty/ no grade passed in'): ", passed("")); // false
+console.log("Q10 passed('Q'): ", passed("Q")); // false
 
 // ---------- QUESTION 11 ----------
 // Create a function named printClassResult (className, student, scores) that utilizes all three functions to output information on a student.
