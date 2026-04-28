@@ -1,0 +1,296 @@
+//----------------------------------
+// LESSON 3 OBJECTS
+//----------------------------------
+
+// This is the coding assignment for the fourth week of the Intro to Programming course from Code the Dream. The concepts touched on in this assignment include:
+//  - Object Basics
+//  - Primitive vs Object Types
+//  - Manipulating Objects
+
+// In this assignment you will write your own code. Your instructions are listed as "comments", meaning the instructions are grayed out and start with '//' at the beginning of the line of code. Put your answers immediately below the instructions for each question. As mentioned in the README.md file, you'll need to use console logs for all the questions to check your code output. Using a function in a console.log is very similar to how you were using them with variables last week. To invoke/call the function use the syntax:
+
+// console.log("Q#: ", functionName(anyInput))
+
+// ---------- QUESTION 1 ----------
+// Objects are a way to store property:value pairs of data in a variable. First, create an object called 'myPet'. Add three properties called 'name', 'species', and 'color' to the 'myPet' object below and assign each of them values. Use your console.log to print the object. Use your console.log's to print the values of each property to the console.
+
+// EXAMPLE LOG:
+//  console.log("Q1 object: ", myPet);
+//  console.log("Q1 name: ", myPet.name);
+//  console.log("Q1 species: ", myPet.species);
+//  console.log("Q1 color: ", myPet.color);
+// EXAMPLE OUTPUT:
+//  Q1 object: {"name":"Teddy","species":"ferret","color":"brown"}
+//  Q1 name: Teddy
+//  Q1 species: ferret
+//  Q1 color: brown
+
+// PUT YOUR CODE HERE
+// create object myPet
+const myPet = {
+    // name
+    name: "Shadow",
+    // species
+    species: "dog",
+    // color
+    color: "brown",
+};
+console.log("Q1 object: ", myPet);
+console.log("Q1 name: ", myPet.name);
+console.log("Q1 species: ", myPet.species);
+console.log("Q1 color: ", myPet.color);
+
+// ---------- QUESTION 2 ---------
+// Now let's see how we can modify the properties. Modify the 'name' property of the 'myPet' object. This name should be different than the value used in Question 1 (e.g. Henry ). Use your console.log's to print the myPet console. Verify the 'name' property is different than the value in Question 1.
+
+// EXAMPLE LOG:
+//  console.log("Q2 updated object", myPet);
+// EXAMPLE OUTPUT:
+//  Q2 updated object: {"name":"Henry","species":"ferret","color":"brown"}
+
+// PUT YOUR CODE HERE
+myPet.name = "Ghost";
+console.log("Q2 updated object", myPet);
+
+// ---------- QUESTION 3 ---------
+// Now let's see how we can loop thru the properties - this is a common task in JavaScript. Use a for...in loop, a special type of loop in JavaScript designed specifically for iterating over the properties of an object. See https://www.w3schools.com/js/js\_loop\_forin.asp for reference.
+// Write a for...in loop that iterates through each property in the myPet object and prints the property name and its value to the console in the following format:
+//Q4: propertyName: propertyValue
+//Use console.log() inside the loop to display each key-value pair.
+
+// EXAMPLE LOG in the loop - replace <..> :
+//  console.log("Q3: "+ <Supply key here> + ":", <Supply value here> );
+// EXAMPLE OUTPUT:
+//  Q3: name: Henry
+//  Q3: species: ferret
+//  Q3: color: brown
+
+// PUT YOUR CODE HERE
+// create for...in loop
+for (let property in myPet){
+    // goes through each property in loop
+    console.log("Q3: "+ property + ":", myPet[property]);
+}
+
+// ---------- QUESTION 4 ----------
+//Let’s explore how to work with object data inside a function. Your task is to define a method called 'describe' in the myPet object. This method should take no parameters and return a sentence using a template literal that describes your pet using its properties.
+
+//Add a method named 'describe' to the myPet object.
+//Inside the method, use a template literal to construct a sentence using the name, color, and species properties.
+//Use console.log() to display the result in the format shown below.
+
+// EXAMPLE LOG:
+//  console.log("Q4: ", myPet.describe());
+// EXAMPLE OUTPUT:
+//Q4: Teddy is a brown ferret.
+
+//Stretch goal: Use "this" keyword. Instead of referencing the object name directly (e.g., myPet.name), update your method to use the this keyword to access the object's properties. This makes your method more flexible and reusable.
+
+// PUT YOUR CODE HERE
+myPet.describe = function(){
+    // construct a sentence using template literal
+    // return `${myPet.name} is a ${myPet.color} ${myPet.species}`;
+    // stretch goal - use "this keyword"
+    return `${this.name} is a ${this.color} ${this.species}`;
+}
+
+console.log("Q4:", myPet.describe());
+
+//---------- QUESTION 5 ----------
+//Using myPet, remove the property color. Verify the deletion by checking whether the myPet object still has a property named color. It returns true if the property exists and false otherwise
+
+// EXAMPLE LOG:
+//   console.log("Q5", "Color property deleted:", !myPet.hasOwnProperty('color'));
+// EXAMPLE OUTPUT:
+//Q5 Color property deleted: true
+// delete color property from myPet
+delete myPet.color;
+
+console.log("Q5", "Color property deleted:", !myPet.hasOwnProperty('color'));
+
+//---------- QUESTION 6 ----------
+//Create a variable named pets and assign it an array containing three pet objects. Each object should include three properties: name, species, and color with appropriate values. Then, define a function called printPets that uses the forEach method to loop through the array and log each pet’s details to the console. Note: console.log is called within the function
+
+//EXAMPLE CALL:
+//  const pets = [
+//   { name: "WillBe", species: "bird", color:"gray"},
+//   { name: "Oshie", species: "cat", color: "multi" },
+//   { name: "Sunny", species: "dog", color: "black" } ]
+//
+// Call the function with the pets array
+//    console.log ("Q6:");
+//    printPets(pets);
+
+// EXAMPLE OUTPUT:
+//Q6:
+//{ name: 'WillBe', species: 'bird', color: 'gray' }
+//{ name: 'Oshie', species: 'cat', color: 'multi' }
+//{ name: 'Sunny', species: 'dog', color: 'black' }
+
+// PUT YOUR CODE HERE
+// create variable pets - has an array of 3 pet objects
+const pets = [
+    // name, species, color
+    { name: "Shadow", species: "dog", color: "brown"},
+    { name: "Ghost", species: "puppy", color: "black"},
+    { name: "Tiger", species: "cat", color: "orange"},
+]
+
+// create function printPets
+function printPets(pets){
+    // create loop using forEach, to go through each pet 
+    pets.forEach((pet) => {
+        // log each pet's detail out
+        console.log(pet);
+    })
+}
+
+console.log ("Q6:");
+printPets(pets);
+
+//---------- QUESTION 7 ----------
+//Write a JavaScript constructor function named Dog that defines a blueprint for creating Dog objects. Each Dog object should include the following properties: name, breed, and age. Using this constructor, create two distinct Dog instances with different values for each property. Finally, use console.log() to display both Dog instances in the console.
+
+//EXAMPLE CALL:
+// Creating new Dog instances
+//let dog1 = new Dog("Kroger", "greyhound", 8);
+//let dog2 = new Dog("Destiny","shepherd" , 14);
+
+// Displaying the Dog instances
+//console.log("Q7", dog1);
+//console.log("Q7", dog2);
+
+// EXAMPLE OUTPUT:
+//Q7: Dog { name: 'Kroger', breed: 'greyhound', age: 8 }
+//Q7: Dog { name: 'Destiny', breed: 'shepherd', age: 14 }
+
+// PUT YOUR CODE HERE
+// create constructor Dog 
+function Dog(name, breed, age){
+    // name, breed, and age. 
+    this.name = name;
+    this.breed = breed;
+    this.age = age;
+}
+
+// create two dogs with different values
+let dog1 = new Dog("Shadow", "shepherd", 3);
+let dog2 = new Dog("Ace", "shiba", 4);
+
+// log both dogs
+console.log("Q7", dog1);
+console.log("Q7", dog2);
+
+//---------- QUESTION 8 ----------
+//Write a function that compares two Dog instances objects and checks if they have the same keys and values. Write a function called areObjectsEqual(obj1, obj2) that returns true if both objects have the same keys and values, and false otherwise. 
+//Reuse:
+// - dog1 from question 7
+// - dog2 from question 7
+// Then, create:
+// - dog3: an object with the same keys and values as dog1.
+// - dog4: an object based on dog1 but with one additional key.
+
+// Use console.log() to test your function with various object comparisons.
+//EXAMPLE CALL:
+//console.log("Q8: Are objects equal - different values:", areObjectsEqual(dog1, dog2)); 
+//console.log("Q8: Are objects equal? - same key and values:", areObjectsEqual(dog1, dog3)); 
+//console.log("Q8: Are objects equal? - different keys:", areObjectsEqual(dog1, dog4)); 
+
+// EXAMPLE OUTPUT:
+//Q8: Are objects equal - different values: false
+//Q8: Are objects equal? - same key and values: true
+//Q8: Are objects equal? - different keys: false
+
+// PUT YOUR CODE HERE
+// create dog 3 and dog 4
+// dog3 is the same as dog 1
+let dog3 = new Dog(dog1.name, dog1.breed, dog1.age);
+
+// dog 4 is dog1 plus one additional key
+let dog4 = new Dog(dog1.name, dog1.breed, dog1.age);
+// additional key
+dog4.size = "small";
+
+// function to compare two Dog instances - areObjectsEqual(obj1, obj2)
+function areObjectsEqual(obj1, obj2){
+    // check if they have same keys AND values
+    // get all keys from obj1
+    const obj1keys = Object.keys(obj1);
+    // get all keys from obj2
+    const obj2keys = Object.keys(obj2);
+    
+    // check keys: if length of keys are not the same return false
+    if (obj1keys.length !== obj2keys.length){
+        return false;
+    }
+
+    // check values:
+    // loop through each key
+    for (let i in obj1keys){
+        // current key - property
+        const currentKey = obj1keys[i];
+
+        // check property: if obj2 does not have currentKey property return false
+        if (!obj2.hasOwnProperty(currentKey)){
+            return false;
+        }
+
+        // check values: if the values don't match return false
+        if (obj1[currentKey] !== obj2[currentKey]){
+            return false;
+        }
+    }
+    // otherwise return true
+    return true;
+}
+
+console.log("Q8: Are objects equal - different values:", areObjectsEqual(dog1, dog2));
+console.log("Q8: Are objects equal? - same key and values:", areObjectsEqual(dog1, dog3));
+console.log("Q8: Are objects equal? - different keys:", areObjectsEqual(dog1, dog4));
+
+//---------- QUESTION 9 ----------
+//Learn how to use the built-in Date object in JavaScript to retrieve and display the current date. See https://www.w3schools.com/js/js\_dates.asp as a reference. Create a variable called currentDate. Assign it the value of a new Date() object.
+
+//EXAMPLE CALL:
+//console.log("Q9: Current Date:", currentDate);
+
+// EXAMPLE OUTPUT: Note Time will differ, below is an example only
+//Q9: Current Date: 2025-09-13T23:47:23.858Z 
+
+// PUT YOUR CODE HERE
+// create currentDate
+let currentDate = new Date();
+
+console.log("Q9: Current Date:", currentDate);
+
+//---------- QUESTION 10 ----------
+//Use JavaScript's Date object to retrieve specific parts of the current date. Using the currentDate from Question 9, write three separate lines of code to extract:
+
+//The year using .getFullYear()
+//The month using .getMonth() (remember: months are zero-indexed!)
+//The day using .getDate()
+//Use console.log() to display each value with a descriptive label.
+
+//EXAMPLE CALL:
+//console.log("Q10 Year:", year);
+//console.log("Q10 Month:", month);
+//console.log("Q10 Day:", day);
+
+// EXAMPLE OUTPUT: Note Time will differ, below is an example only
+//Q10 Year: 2025
+//Q10 Month: 9
+//Q10 Day: 13
+
+// PUT YOUR CODE HERE
+// year
+let year = currentDate.getFullYear();
+
+// month
+let month = currentDate.getMonth();
+
+// day
+let day = currentDate.getDate();
+
+console.log("Q10 Year:", year);
+console.log("Q10 Month:", month);
+console.log("Q10 Day:", day);
