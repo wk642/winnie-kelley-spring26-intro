@@ -1,136 +1,155 @@
 <!DOCTYPE html>
 <html>
-   <head>
-       <title> Winnie Kelley's Portfolio</title>
-       <meta charset="UTF-8">
-       <meta name="description" content="Portfolio Site">
-       <meta name="keywords" content="Portfolio, HTML, CSS">
-       <meta name="author" content="Winnie Kelley">
-       <meta name="viewport" content="width=device-width, initial-scale-1.0">
+  <head>
+    <title> Winnie Kelley's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfolio Site">
+    <meta name="keywords" content="Portfolio, HTML, CSS">
+    <meta name="author" content="Winnie Kelley">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
 
-       <!-- adding this for the social media icons from fontawesome -->
-       <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
+    <!-- adding this for the social media icons from fontawesome -->
+    <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
 
-       <!-- I am moving inline css to here, not sure if I'm allowed to use a css file yet, but this way my code is a little cleaner, and it's a lot easier for me to add the css too-->
-        <style>
-            body {
-                background-color: black;
-                color: white;
-            }
+    <!-- I am moving inline css to here, not sure if I'm allowed to use a css file yet, but this way my code is a little cleaner, and it's a lot easier for me to add the css too-->
+    <style>
+      body {
+          background-color: black;
+          color: white;
+          text-align: center;
+      }
 
-            #experience li {
-                padding-bottom: 10px;
-            }
+      #profile-image {
+        border-radius: 50%;
+        width: 15%;
+        background: transparent;
+        filter:
+          drop-shadow(2px 0 0 #23c7ff)
+          drop-shadow(-2px 0 0 #23c7ff)
+          drop-shadow(0 2px 0 #23c7ff)
+          drop-shadow(0 -2px 0 #23c7ff)
+          drop-shadow(0 0 12px rgb(255, 187, 0));
+      }
+      
+      #experience li {
+          padding-bottom: 10px;
+      }
 
-            #connect ul{
-                list-style: none; 
-                display: flex; 
-                gap: 20px;
-            }
+      #connect ul{
+          list-style: none; 
+          display: flex; 
+          gap: 20px;
+      }
+      
+      #connect li{
+          display: inline-block;
+      }
+
+      #connect img{
+          width: 30px; 
+          transition: all 0.3s; 
+          filter: brightness(0) invert(1);
+      }
+
+      #connect img:hover{
+          width: 40px; 
+          filter: 
+              invert(31%)
+              sepia(98%)
+              saturate(1065%)
+              hue-rotate(189deg)
+              brightness(91%)
+              contrast(92%) ;
+      }
+
+      .fa-brands{
+          font-size: 1.5em;
+          transition: color 0.3s;
+      }
+      
+      .fa-brands:hover{
+          color: white;
+          font-size: 2em;
+      }
+
+      .fa-linkedin{
+          color: #0a66c2ff;
+      }
+      
+      .fa-youtube{
+          color: red;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="profile-image-wrap">
+    <img 
+      id="profile-image" 
+      src="../assets/images/profileImage.png" 
+      alt="profile image of me, Winnie Kelley"/>
+  </div> <!-- end of profile-image-wrap -->
+
+  <h1>Winnie Kelley</h1>
+
+  <section id="about"> 
+    <h2>About</h2>
+    <p>I'm the engineer your company calls at 3 a.m. when it's throwing errors and questioning its life choices. I build fullstack apps that turns messy ideas into clean, accessible interfaces and APIs, and I obsess over the tiny UI details no one notices until they break</p>
+  </section> <!-- end of about -->
+        
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li>Student at Code The Dreams</li>
+      <li>Clever - Technical Customer Support</li>
+      <li>CTO of BeatSync</li>
+      <li>Founder of TrueBase</li>
+      <li>HTML, CSS, JavaScript, React, React Native, TypeScript, Postgres, Node, Express</li>
+      <li>Have previous knowledge of Java, Python, Swift, C++</li>
+      <li>Software Engineer at Sony (PlayStation5)</li>
+      <li>Software Engineer Apprentice at Techtonica</li>
+      <li>Regional Manager at Primerica</li>
+      <li>Uber</li>
+      <li>Owner at 42Bricks</li>
+      <li>Freelance Web Developer</li>
+    </ul>
+  </section> <!-- end of experience -->
+
+    <section id="connect">
+      <h2>Connect with me!</h2>
+        <ul>
+            <!-- github -->
+            <li>
+                <a href="https://github.com/wk642/">
+                    <img 
+                      src="../assets/images/githubIcon.png"
+                      alt="Click to visit my gitHub profile"
+                    >
+                </a>
+            </li>
             
-            #connect li{
-                display: inline-block;
-            }
-
-            #connect img{
-                width: 30px; 
-                transition: all 0.3s; 
-                filter: brightness(0) invert(1);
-            }
-
-            #connect img:hover{
-                width: 40px; 
-                filter: 
-                    invert(31%)
-                    sepia(98%)
-                    saturate(1065%)
-                    hue-rotate(189deg)
-                    brightness(91%)
-                    contrast(92%) ;
-            }
-
-            .fa-brands{
-                font-size: 1.5em;
-                transition: color 0.3s;
-            }
-            
-            .fa-brands:hover{
-                color: white;
-                font-size: 2em;
-            }
-
-            .fa-linkedin{
-                color: #0a66c2ff;
-            }
-            
-            .fa-youtube{
-                color: red;
-            }
-        </style>
-   </head>
-
-   <body>
-       <h1>Winnie Kelley</h1>
-
-       <section id="about"> 
-           <h2>About</h2>
-           <p>I'm the engineer your company calls at 3 a.m. when it's throwing errors and questioning its life choices. I build fullstack apps that turns messy ideas into clean, accessible interfaces and APIs, and I obsess over the tiny UI details no one notices until they break</p>
-       </section>
-           
-       <section id="experience">
-
-           <h2>Experience</h2>
-           <ul>
-               <li>Student at Code The Dreams</li>
-               <li>Clever - Technical Customer Support</li>
-               <li>CTO of BeatSync</li>
-               <li>Founder of TrueBase</li>
-               <li>HTML, CSS, JavaScript, React, React Native, TypeScript, Postgres, Node, Express</li>
-               <li>Have previous knowledge of Java, Python, Swift, C++</li>
-               <li>Software Engineer at Sony (PlayStation5)</li>
-               <li>Software Engineer Apprentice at Techtonica</li>
-               <li>Regional Manager at Primerica</li>
-               <li>Uber</li>
-               <li>Owner at 42Bricks</li>
-               <li>Freelance Web Developer</li>
-           </ul>
-       </section>
-
-       <section id="connect">
-           <h2>Connect</h2>
-           <ul>
-               <!-- github -->
-               <li>
-                   <a href="https://github.com/wk642/">
-                       <img 
-                        src="../assets/images/githubIcon.png"
-                        alt="Click to visit my gitHub profile"
-                       >
-                   </a>
-               </li>
-               
-               <!-- linkedin -->
-               <li>
-                   <!-- adding aria-label since I'm not using img -->
-                   <a 
-                    href="https://www.linkedin.com/in/w642kelley/" 
-                    aria-label="Click to visit my Linkedin profile"
-                   >
-                       <i class="fa-brands fa-linkedin" ></i>
-                   </a>
-               </li>
-       
-               <!-- youtube = buildByteByByte -->
-               <li>
-                   <a 
-                    href="https://www.youtube.com/@buildByteByByte" 
-                    aria-label="Click to visit my youTube profile"
-                   >
-                       <!-- pulling icon from fontawesome and adding hovering -->
-                       <i class="fa-brands fa-youtube"></i>
-                   </a>
-               </li>
-           </ul>
-       </section>
-   </body>
+            <!-- linkedin -->
+            <li>
+                <!-- adding aria-label since I'm not using img -->
+                <a 
+                  href="https://www.linkedin.com/in/w642kelley/" 
+                  aria-label="Click to visit my Linkedin profile"
+                >
+                    <i class="fa-brands fa-linkedin" ></i>
+                </a>
+            </li>
+    
+            <!-- youtube = buildByteByByte -->
+            <li>
+                <a 
+                  href="https://www.youtube.com/@buildByteByByte" 
+                  aria-label="Click to visit my youTube profile"
+                >
+                    <!-- pulling icon from fontawesome and adding hovering -->
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </li>
+        </ul>
+    </section> <!-- end of connect -->
+  </body>
 </html>
