@@ -10,9 +10,66 @@
 
        <!-- adding this for the social media icons from fontawesome -->
        <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
+
+       <!-- I am moving inline css to here, not sure if I'm allowed to use a css file yet, but this way my code is a little cleaner, and it's a lot easier for me to add the css too-->
+        <style>
+            body {
+                background-color: black;
+                color: white;
+            }
+
+            #experience li {
+                padding-bottom: 10px;
+            }
+
+            #connect ul{
+                list-style: none; 
+                display: flex; 
+                gap: 20px;
+            }
+            
+            #connect li{
+                display: inline-block;
+            }
+
+            #connect img{
+                width: 30px; 
+                transition: all 0.3s; 
+                filter: brightness(0) invert(1);
+            }
+
+            #connect img:hover{
+                width: 40px; 
+                filter: 
+                    invert(31%)
+                    sepia(98%)
+                    saturate(1065%)
+                    hue-rotate(189deg)
+                    brightness(91%)
+                    contrast(92%) ;
+            }
+
+            .fa-brands{
+                font-size: 1.5em;
+                transition: color 0.3s;
+            }
+            
+            .fa-brands:hover{
+                color: white;
+                font-size: 2em;
+            }
+
+            .fa-linkedin{
+                color: #0a66c2ff;
+            }
+            
+            .fa-youtube{
+                color: red;
+            }
+        </style>
    </head>
 
-   <body style="background-color: black; color: white;">
+   <body>
        <h1>Winnie Kelley</h1>
 
        <section id="about"> 
@@ -24,67 +81,53 @@
 
            <h2>Experience</h2>
            <ul>
-               <li style="padding-bottom: 10px;">Student at Code The Dreams</li>
-               <li style="padding-bottom: 10px;">Clever - Technical Customer Support</li>
-               <li style="padding-bottom: 10px;">CTO of BeatSync</li>
-               <li style="padding-bottom: 10px;">Founder of TrueBase</li>
-               <li style="padding-bottom: 10px;">HTML, CSS, JavaScript, React, React Native, TypeScript, Postgres, Node, Express</li>
-               <li style="padding-bottom: 10px;">Have previous knowledge of Java, Python, Swift, C++</li>
-               <li style="padding-bottom: 10px;">Software Engineer at Sony (PlayStation5)</li>
-               <li style="padding-bottom: 10px;">Software Engineer Apprentice at Techtonica</li>
-               <li style="padding-bottom: 10px;">Regional Manager at Primerica</li>
-               <li style="padding-bottom: 10px;">Uber</li>
-               <li style="padding-bottom: 10px;">Owner at 42Bricks</li>
-               <li style="padding-bottom: 10px;">Freelance Web Developer</li>
+               <li>Student at Code The Dreams</li>
+               <li>Clever - Technical Customer Support</li>
+               <li>CTO of BeatSync</li>
+               <li>Founder of TrueBase</li>
+               <li>HTML, CSS, JavaScript, React, React Native, TypeScript, Postgres, Node, Express</li>
+               <li>Have previous knowledge of Java, Python, Swift, C++</li>
+               <li>Software Engineer at Sony (PlayStation5)</li>
+               <li>Software Engineer Apprentice at Techtonica</li>
+               <li>Regional Manager at Primerica</li>
+               <li>Uber</li>
+               <li>Owner at 42Bricks</li>
+               <li>Freelance Web Developer</li>
            </ul>
        </section>
 
-       <section>
+       <section id="connect">
            <h2>Connect</h2>
-           <ul style="list-style: none; display: flex; gap: 20px">
+           <ul>
                <!-- github -->
-               <li style="display: inline-block">
+               <li>
                    <a href="https://github.com/wk642/">
-                       <!-- doing this with image just to demonstrate that I do know how to utilize the image tag still adding transitions -->
                        <img 
-                       style="width: 30px; transition: all 0.3s; filter: brightness(0) invert(1);" 
-                       onmouseover="this.style.width='40px'; this.style.filter='invert(31%) sepia(98%) saturate(1065%) hue-rotate(189deg) brightness(91%) contrast(92%)'" 
-                       onmouseout="this.style.width='30px'; this.style.filter='brightness(0) invert(1)'"
-                       src="assets/images/githubIcon.png" 
-                       alt="Click to visit my gitHub profile"
+                        src="../assets/images/githubIcon.png"
+                        alt="Click to visit my gitHub profile"
                        >
                    </a>
                </li>
                
-               <!-- <linkedin -->
-               <li style="display: inline-block">
+               <!-- linkedin -->
+               <li>
                    <!-- adding aria-label since I'm not using img -->
                    <a 
-                   href="https://www.linkedin.com/in/w642kelley/" 
-                   aria-label="Click to visit my Linkedin profile"
+                    href="https://www.linkedin.com/in/w642kelley/" 
+                    aria-label="Click to visit my Linkedin profile"
                    >
-                       <i 
-                           class="fa-brands fa-linkedin" 
-                           style="color: #0a66c2ff; font-size: 1.5em; transition: color 0.3s;" 
-                           onmouseover="this.style.color='white'; this.style.fontSize= '2em'" 
-                           onmouseout="this.style.color='#0a66c2ff'; this.style.fontSize= '1.5em'">
-                       </i>
+                       <i class="fa-brands fa-linkedin" ></i>
                    </a>
                </li>
        
                <!-- youtube = buildByteByByte -->
-               <li style="display: inline-block">
+               <li>
                    <a 
-                   href="https://www.youtube.com/@buildByteByByte" 
-                   aria-label="Click to visit my youTube profile"
+                    href="https://www.youtube.com/@buildByteByByte" 
+                    aria-label="Click to visit my youTube profile"
                    >
                        <!-- pulling icon from fontawesome and adding hovering -->
-                       <i
-                           class="fa-brands fa-youtube" 
-                           style="color: red; font-size: 1.5em; transition: color 0.3s;" 
-                           onmouseover="this.style.color='white'; this.style.fontSize= '2em'" 
-                           onmouseout="this.style.color='red'; this.style.fontSize= '1.5em'">
-                       </i>
+                       <i class="fa-brands fa-youtube"></i>
                    </a>
                </li>
            </ul>
