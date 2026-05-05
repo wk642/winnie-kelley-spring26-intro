@@ -13,8 +13,16 @@
 
     <!-- I am moving inline css to here, not sure if I'm allowed to use a css file yet, but this way my code is a little cleaner, and it's a lot easier for me to add the css too-->
     <style>
+      /* color pallette
+        - Light Blue #8ecae6
+        - Blue Green #219ebc
+        - Blue #023047
+        - Dark Blue #001018
+        - Light Orange #ffb703
+        - Dark Orange #fb8500
+      */
       body {
-          background-color: black;
+          background-color: #001018;
           color: white;
           text-align: center;
       }
@@ -24,13 +32,61 @@
         width: 15%;
         background: transparent;
         filter:
-          drop-shadow(2px 0 0 #23c7ff)
-          drop-shadow(-2px 0 0 #23c7ff)
-          drop-shadow(0 2px 0 #23c7ff)
-          drop-shadow(0 -2px 0 #23c7ff)
-          drop-shadow(0 0 12px rgb(255, 187, 0));
+          drop-shadow(2px 0 0 #8ecae6)
+          drop-shadow(-2px 0 0 #8ecae6)
+          drop-shadow(0 2px 0 #8ecae6)
+          drop-shadow(0 -2px 0 #8ecae6)
+          drop-shadow(0 0 12px #ffb703);
       }
-      
+      /* main nav */
+      .main-nav {
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem auto 2rem;
+      }
+
+      .main-nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+        margin: 0;
+        background: #023047;
+        border: 2px solid #8ecae6;
+        border-radius: 999px;
+        box-shadow: 0 0 18px #ffb703;
+      }
+
+      .main-nav a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+        padding: 0.7rem 1.1rem;
+        border-radius: 999px;
+        background: #219ebc;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      .main-nav a:hover {
+        color: #8ecae6;
+        border-color: #219ebc;
+        transform: translateY(-2px);
+      }
+
+      .main-nav a.active {
+        background: linear-gradient(135deg, #8ecae6, #ffb703);
+        color: black;
+        border-color: transparent;
+      }
+
+      .main-nav a:focus-visible {
+        outline: 3px solid #fb8500;
+        outline-offset: 3px;
+      }
+      /* end of main nav */
+
       #experience li {
           padding-bottom: 10px;
       }
@@ -83,73 +139,87 @@
 </head>
 
 <body>
-  <div class="profile-image-wrap">
-    <img 
-      id="profile-image" 
-      src="../assets/images/profileImage.png" 
-      alt="profile image of me, Winnie Kelley"/>
-  </div> <!-- end of profile-image-wrap -->
+  <!-- Adding a wrapper -->
+  <div class="wrapper">
+    <!-- Adding a profile image -->
+    <div class="profile-image-wrap">
+      <img 
+        id="profile-image" 
+        src="../assets/images/profileImage.png" 
+        alt="profile image of me, Winnie Kelley"/>
+    </div> <!-- end of profile-image-wrap -->
 
-  <h1>Winnie Kelley</h1>
+    <h1>Winnie Kelley</h1>
 
-  <section id="about"> 
-    <h2>About</h2>
-    <p>I'm the engineer your company calls at 3 a.m. when it's throwing errors and questioning its life choices. I build fullstack apps that turns messy ideas into clean, accessible interfaces and APIs, and I obsess over the tiny UI details no one notices until they break</p>
-  </section> <!-- end of about -->
-        
-  <section id="experience">
-    <h2>Experience</h2>
-    <ul>
-      <li>Student at Code The Dreams</li>
-      <li>Clever - Technical Customer Support</li>
-      <li>CTO of BeatSync</li>
-      <li>Founder of TrueBase</li>
-      <li>HTML, CSS, JavaScript, React, React Native, TypeScript, Postgres, Node, Express</li>
-      <li>Have previous knowledge of Java, Python, Swift, C++</li>
-      <li>Software Engineer at Sony (PlayStation5)</li>
-      <li>Software Engineer Apprentice at Techtonica</li>
-      <li>Regional Manager at Primerica</li>
-      <li>Uber</li>
-      <li>Owner at 42Bricks</li>
-      <li>Freelance Web Developer</li>
-    </ul>
-  </section> <!-- end of experience -->
+    <!-- Adding a nav bar -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
 
-    <section id="connect">
-      <h2>Connect with me!</h2>
-        <ul>
-            <!-- github -->
-            <li>
-                <a href="https://github.com/wk642/">
-                    <img 
-                      src="../assets/images/githubIcon.png"
-                      alt="Click to visit my gitHub profile"
-                    >
-                </a>
-            </li>
-            
-            <!-- linkedin -->
-            <li>
-                <!-- adding aria-label since I'm not using img -->
-                <a 
-                  href="https://www.linkedin.com/in/w642kelley/" 
-                  aria-label="Click to visit my Linkedin profile"
-                >
-                    <i class="fa-brands fa-linkedin" ></i>
-                </a>
-            </li>
-    
-            <!-- youtube = buildByteByByte -->
-            <li>
-                <a 
-                  href="https://www.youtube.com/@buildByteByByte" 
-                  aria-label="Click to visit my youTube profile"
-                >
-                    <!-- pulling icon from fontawesome and adding hovering -->
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-            </li>
-        </ul>
-    </section> <!-- end of connect -->
+    <section id="about"> 
+      <h2>About</h2>
+      <p>I'm the engineer your company calls at 3 a.m. when it's throwing errors and questioning its life choices. I build fullstack apps that turns messy ideas into clean, accessible interfaces and APIs, and I obsess over the tiny UI details no one notices until they break</p>
+    </section> <!-- end of about -->
+          
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li>Student at Code The Dreams</li>
+        <li>Clever - Technical Customer Support</li>
+        <li>CTO of BeatSync</li>
+        <li>Founder of TrueBase</li>
+        <li>HTML, CSS, JavaScript, React, React Native, TypeScript, Postgres, Node, Express</li>
+        <li>Have previous knowledge of Java, Python, Swift, C++</li>
+        <li>Software Engineer at Sony (PlayStation5)</li>
+        <li>Software Engineer Apprentice at Techtonica</li>
+        <li>Regional Manager at Primerica</li>
+        <li>Uber</li>
+        <li>Owner at 42Bricks</li>
+        <li>Freelance Web Developer</li>
+      </ul>
+    </section> <!-- end of experience -->
+
+      <section id="connect">
+        <h2>Connect with me!</h2>
+          <ul>
+              <!-- github -->
+              <li>
+                  <a href="https://github.com/wk642/">
+                      <img 
+                        src="../assets/images/githubIcon.png"
+                        alt="Click to visit my gitHub profile"
+                      >
+                  </a>
+              </li>
+              
+              <!-- linkedin -->
+              <li>
+                  <!-- adding aria-label since I'm not using img -->
+                  <a 
+                    href="https://www.linkedin.com/in/w642kelley/" 
+                    aria-label="Click to visit my Linkedin profile"
+                  >
+                      <i class="fa-brands fa-linkedin" ></i>
+                  </a>
+              </li>
+      
+              <!-- youtube = buildByteByByte -->
+              <li>
+                  <a 
+                    href="https://www.youtube.com/@buildByteByByte" 
+                    aria-label="Click to visit my youTube profile"
+                  >
+                      <!-- pulling icon from fontawesome and adding hovering -->
+                      <i class="fa-brands fa-youtube"></i>
+                  </a>
+              </li>
+          </ul>
+      </section> <!-- end of connect -->
+    </div> <!-- end of wrapper -->
   </body>
 </html>
