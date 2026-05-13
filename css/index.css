@@ -85,6 +85,16 @@ body {
     height: 100%;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
 h2 {
     color: var(--heading-color);
 }
