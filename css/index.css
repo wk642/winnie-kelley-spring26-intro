@@ -1,0 +1,161 @@
+/* color pallette
+    - Light Blue #8ecae6
+    - Blue Green #219ebc
+    - Blue #023047
+    - Dark Blue #001018
+    - Light Orange #ffb703
+    - Dark Orange #fb8500
+*/
+body {
+    background-color: #001018;
+    color: #8ecae6;
+    text-align: center;
+    margin: 0, auto;
+    height: 100%;
+    font-family: "Shantell Sans", cursive;
+}
+
+h2 {
+    color: #ffb703;
+}
+
+#profile-image {
+    border-radius: 50%;
+    width: 10%;
+    margin-bottom: -0.5rem;
+    background: transparent;
+    filter:
+    drop-shadow(2px 0 0 #8ecae6)
+    drop-shadow(-2px 0 0 #8ecae6)
+    drop-shadow(0 2px 0 #8ecae6)
+    drop-shadow(0 -2px 0 #8ecae6)
+    drop-shadow(0 0 12px #ffb703);
+}
+
+#name{
+    margin: 1rem;
+}
+
+/* main nav */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    margin: -0.5rem auto 1.5rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    background: #023047;
+    border: 2px solid #8ecae6;
+    border-radius: 999px;
+    box-shadow: 0 0 18px #ffb703;
+}
+
+.main-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    padding: 0.7rem 1.1rem;
+    border-radius: 999px;
+    background: #219ebc;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #8ecae6;
+    border-color: #219ebc;
+    transform: translateY(-2px);
+}
+
+.main-nav a.active {
+    background: linear-gradient(135deg, #8ecae6, #ffb703);
+    color: black;
+    border-color: transparent;
+}
+
+.main-nav a:focus-visible {
+    outline: 3px solid #fb8500;
+    outline-offset: 3px;
+}
+/* end of main nav */
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+
+
+#about, #experience, #projects {
+    border-radius: 10px;
+    border: 2px solid #8ecae6;
+    box-shadow: 0 0 18px #ffb703;
+}
+
+#contact {
+    text-align: center;
+}
+
+#experience ul {
+    list-style: none;
+}
+#experience li {
+    padding-bottom: 10px;
+    padding-left: 0px;
+}
+
+#connect {
+    text-align: center;
+}
+#connect ul{
+    list-style: none; 
+    display: flex; 
+    gap: 30px;
+    justify-content: center;
+}
+
+#connect li{
+    display: inline-block;
+}
+
+#connect img{
+    width: 30px; 
+    transition: all 0.3s; 
+    filter: brightness(0) invert(1);
+}
+
+#connect img:hover{
+    width: 40px; 
+    filter: 
+        invert(31%)
+        sepia(98%)
+        saturate(1065%)
+        hue-rotate(189deg)
+        brightness(91%)
+        contrast(92%) ;
+}
+
+.fa-brands{
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.fa-brands:hover{
+    color: white;
+    font-size: 2em;
+}
+
+.fa-linkedin{
+    color: #0a66c2ff;
+}
+
+.fa-youtube{
+    color: red;
+}
