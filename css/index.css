@@ -210,16 +210,17 @@ h2 {
     box-shadow: 0 0 18px var(--section-glow);
 }
 
-#contact {
-    text-align: center;
-}
-
 #experience ul {
     list-style: none;
+    text-align: left;   
 }
 #experience li {
     padding-bottom: 10px;
     padding-left: 0px;
+}
+
+#contact {
+    text-align: center;
 }
 
 #connect {
