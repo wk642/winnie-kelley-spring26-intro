@@ -70,6 +70,7 @@ body {
     margin: 0, auto;
     height: 100%;
     font-family: "Caveat Brush", cursive;
+    overflow: hidden;
 }
 
 .wrapper {
@@ -77,6 +78,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     width: 100%;
+    padding: 0.75rem 1rem 1rem;
+    overflow: hidden;
 }
 
 h2 {
@@ -84,8 +87,9 @@ h2 {
 }
 
 #profile-image {
+    padding: 0.3rem;
     border-radius: 50%;
-    width: 10%;
+    width: 8%;
     margin-bottom: -0.5rem; 
     background: transparent;
     filter:
@@ -97,7 +101,7 @@ h2 {
 }
 
 #name{
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
 /* main nav */
@@ -199,6 +203,8 @@ h2 {
 }
 
 #about, #experience, #projects {
+    margin: 1rem;
+    padding: 1rem;
     border-radius: 10px;
     border: 2px solid var(--section-border);
     box-shadow: 0 0 18px var(--section-glow);
@@ -253,7 +259,7 @@ h2 {
 }
 
 .fa-brands:hover {
-    color: #ffb703;
+    color: var(--nav-link-bg);
     font-size: 2em;
 }
 
