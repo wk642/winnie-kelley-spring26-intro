@@ -114,24 +114,24 @@ h2 {
 #connect {
     text-align: center;
 }
-#connect ul{
+#connect ul {
     list-style: none; 
     display: flex; 
     gap: 30px;
     justify-content: center;
 }
 
-#connect li{
+#connect li { 
     display: inline-block;
 }
 
-#connect img{
+#connect img {
     width: 30px; 
     transition: all 0.3s; 
     filter: brightness(0) invert(1);
 }
 
-#connect img:hover{
+#connect img:hover {
     width: 40px; 
     filter: 
         invert(31%)
@@ -142,20 +142,23 @@ h2 {
         contrast(92%) ;
 }
 
-.fa-brands{
+.fa-brands {
     font-size: 1.5em;
     transition: color 0.3s;
 }
 
-.fa-brands:hover{
-    color: white;
+.fa-brands:hover {
+    color: #ffb703;
     font-size: 2em;
 }
 
-.fa-linkedin{
+.fa-github {
+    color: white;
+}
+.fa-linkedin {
     color: #0a66c2ff;
 }
 
-.fa-youtube{
+.fa-youtube {
     color: red;
 }
