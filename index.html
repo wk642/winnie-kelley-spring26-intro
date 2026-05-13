@@ -10,17 +10,25 @@
 
     <!-- adding external css-->
     <link rel="stylesheet" href="css/index.css">
+
     <!-- adding this for the social media icons from fontawesome -->
     <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
 
     <!-- Adding Google font: Shantell Sans -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> -->
+
+    <!-- Thinking of using Caveat Brush and Lexend, so trying this out before deciding and adding lexend back in-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Adding this checkbox for toggle between dark and light mode, would normally not use this checkbox and use javascript, but for this assignement purpose trying to keep it to strictly html and css-->
+  <input type="checkbox" id="dark-light-toggle" class="mode-switch">
+
   <!-- Adding a wrapper -->
   <div class="wrapper">
     <!-- Adding a profile image -->
@@ -41,6 +49,11 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#connect">Connect</a></li>
       </ul>
+      <!-- Adding dark and light mode button here --> 
+      <label for="dark-light-toggle" class="dark-light-toggle" aria-label="Toggle between dark and light mode">
+        <i class="fa-solid fa-moon fa-2xl" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun fa-2xl" aria-hidden="true"></i>
+      </label>
     </nav>
 
     <div class="content">
