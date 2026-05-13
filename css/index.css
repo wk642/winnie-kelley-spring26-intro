@@ -36,6 +36,7 @@
     --github-color: #ffffff;
     --linkedin-color: #0a66c2;
     --youtube-color: #ff0000;
+    --envelope-color: #ffffff;
     --toggle-border: #8ecae6;
     --toggle-icon: #ffb703;
 }
@@ -59,6 +60,7 @@
     --github-color: #023047;
     --linkedin-color: #0a66c2;
     --youtube-color: #ff0000;
+    --envelope-color: #023047;
     --toggle-border: #219ebc;
     --toggle-icon: #fb8500;
 }
@@ -70,7 +72,7 @@ body {
     margin: 0, auto;
     height: 100%;
     font-family: "Caveat Brush", cursive;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .wrapper {
@@ -79,7 +81,8 @@ body {
     color: var(--text-color);
     width: 100%;
     padding: 0.75rem 1rem 1rem;
-    overflow: hidden;
+    /* overflow: auto; */
+    height: 100%;
 }
 
 h2 {
@@ -144,15 +147,14 @@ h2 {
     transform: translateY(-2px);
 }
 
-.main-nav a.active {
-    background: linear-gradient(135deg, #8ecae6, #ffb703);
-    color: black;
-    border-color: transparent;
-}
-
-.main-nav a:focus-visible mode-toggle:focus-visible {
-    outline: 3px solid var(--focus-outline);
-    outline-offset: 3px;
+body:has(#about:target) .main-nav a[href="#about"],
+body:has(#experience:target) .main-nav a[href="#experience"],
+body:has(#skills:target) .main-nav a[href="#skills"],
+body:has(#projects:target) .main-nav a[href="#projects"],
+body:has(#connect:target) .main-nav a[href="#connect"] {
+  background: linear-gradient(135deg, #8ecae6, #ffb703);
+  color: black;
+  border-color: transparent;
 }
 /* end of main nav */
 
@@ -198,27 +200,123 @@ h2 {
 }
 
 .content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-#about, #experience, #projects {
+.content-section {
+    display: none;
+}
+
+#about {
+    display: block;
+}
+
+#about:target, 
+#experience:target, 
+#skills:target, 
+#projects:target, 
+#connect:target{
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
     border: 2px solid var(--section-border);
     box-shadow: 0 0 18px var(--section-glow);
+    display: block;
+    width: 90%;
 }
 
-#experience ul {
-    list-style: none;
-    text-align: left;   
+body:has(#experience:target) #about, 
+body:has(#skills:target) #about, 
+body:has(#projects:target) #about, 
+body:has(#connect:target) #about {
+    display: none;
 }
-#experience li {
-    padding-bottom: 10px;
-    padding-left: 0px;
+
+.experience-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    position: relative;
+}
+
+.experience-list::before {
+    /* create the timeline linee */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.1rem;
+    width: 3px;
+    background: var(--section-border);
+    box-shadow: 0 0 10px var(--section-glow);
+}
+
+.experience-item {
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.experience-item::before {
+    content: "";
+    position: absolute;
+    left: -1.4rem;
+    top: 2rem;
+    width: 14px;
+    height: 14px;
+    background: var(--heading-color);
+    border: 3px solid var(--nav-bg);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--section-glow);
+    z-index: 2;
+}
+
+.experience-card {
+    background: #219ebc2e;
+    border: 1px solid var(--section-border);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 0 14px #00000026;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.experience-header h3 {
+    margin: 0;
+    color: var(--heading-color);
+    font-size: 1.15rem;
+}
+
+.experience-date {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    white-space: nowrap;
+}
+
+.experience-company {
+    margin: 0 0 0.35rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.experience-description {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.4;
+    opacity: 0.9;
 }
 
 #contact {
@@ -256,12 +354,12 @@ h2 {
         contrast(92%) ;
 }
 
-.fa-brands {
+.fa-brands, .fa-solid {
     font-size: 1.5em;
     transition: color 0.3s;
 }
 
-.fa-brands:hover {
+.fa-brands:hover, .fa-solid:hover{
     color: var(--nav-link-bg);
     font-size: 2em;
 }
@@ -275,4 +373,8 @@ h2 {
 
 .fa-youtube {
     color: var(--youtube-color);
+}
+
+.fa-envelope {
+    color: var(--envelope-color);
 }
