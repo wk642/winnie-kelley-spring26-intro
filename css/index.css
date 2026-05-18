@@ -1,0 +1,386 @@
+/* color pallette
+    - Light Blue #8ecae6
+    - Blue Green #219ebc
+    - Blue #023047
+    - Dark Blue #001018
+    - Light Orange #ffb703
+    - Dark Orange #fb8500
+*/
+
+/* Setting up dark and light mode */
+
+/* Hide the checkbox */
+.mode-switch {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Dark mode as default first */
+/* Dark mode default */
+:root {
+    --bg-color: #001018;
+    --text-color: #8ecae6;
+    --heading-color: #ffb703;
+    --profile-outline: #8ecae6;
+    --profile-glow: #ffb703;
+    --nav-bg: #023047;
+    --nav-border: #8ecae6;
+    --nav-link-color: #ffffff;
+    --nav-link-bg: #219ebc;
+    --nav-hover-color: #8ecae6;
+    --nav-hover-border: #219ebc;
+    --section-border: #8ecae6;
+    --section-glow: #ffb703;
+    --focus-outline: #fb8500;
+    --github-color: #ffffff;
+    --linkedin-color: #0a66c2;
+    --youtube-color: #ff0000;
+    --envelope-color: #ffffff;
+    --toggle-border: #8ecae6;
+    --toggle-icon: #ffb703;
+}
+
+/* Light mode when checkbox is checked */
+#dark-light-toggle:checked ~ .wrapper {
+    --bg-color: #f8fbfd;
+    --text-color: #023047;
+    --heading-color: #fb8500;
+    --profile-outline: #219ebc;
+    --profile-glow: #ffb703;
+    --nav-bg: #8ecae6;
+    --nav-border: #219ebc;
+    --nav-link-color: #001018;
+    --nav-link-bg: #ffb703;
+    --nav-hover-color: #023047;
+    --nav-hover-border: #219ebc;
+    --section-border: #219ebc;
+    --section-glow: #fb8500;
+    --focus-outline: #fb8500;
+    --github-color: #023047;
+    --linkedin-color: #0a66c2;
+    --youtube-color: #ff0000;
+    --envelope-color: #023047;
+    --toggle-border: #219ebc;
+    --toggle-icon: #fb8500;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    margin: 0 auto;
+    height: 100%;
+    font-family: "Caveat Brush", cursive;
+    /* overflow: hidden; */
+}
+
+.wrapper {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 100%;
+    padding: 0.75rem 1rem 1rem;
+    /* overflow: auto; */
+    height: 100%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+h2 {
+    color: var(--heading-color);
+}
+
+#profile-image {
+    padding: 0.3rem;
+    border-radius: 50%;
+    width: 8%;
+    margin-bottom: -0.5rem; 
+    background: transparent;
+    filter:
+        drop-shadow(2px 0 0 var(--profile-outline))
+        drop-shadow(-2px 0 0 var(--profile-outline))
+        drop-shadow(0 2px 0 var(--profile-outline))
+        drop-shadow(0 -2px 0 var(--profile-outline))
+        drop-shadow(0 0 12px var(--profile-glow));
+}
+
+#name{
+    margin: 0.5rem;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+}
+
+/* main nav */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    margin: -0.5rem auto 1.5rem;
+    gap: 2rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    background: var(--nav-bg);
+    border: 2px solid var(--nav-border);
+    border-radius: 999px;
+    box-shadow: 0 0 18px var(--section-glow);
+}
+
+.main-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--nav-link-color);
+    font-weight: 700;
+    padding: 0.7rem 1.1rem;
+    border-radius: 999px;
+    background: var(--nav-link-bg);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--nav-hover-color);
+    border-color: var(--nav-hover-border);
+    transform: translateY(-2px);
+}
+
+body:has(#about:target) .main-nav a[href="#about"],
+body:has(#experience:target) .main-nav a[href="#experience"],
+body:has(#skills:target) .main-nav a[href="#skills"],
+body:has(#projects:target) .main-nav a[href="#projects"],
+body:has(#connect:target) .main-nav a[href="#connect"] {
+  background: linear-gradient(135deg, #8ecae6, #ffb703);
+  color: black;
+  border-color: transparent;
+}
+/* end of main nav */
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* dark light mode toggles */
+.mode-toggle {
+    width: 160px;
+    height: 160px;
+    border: 2px solid var(--toggle-border);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--toggle-icon);
+    background: transparent;
+}
+
+.mode-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px var(--card-glow);
+}
+
+.dark-light-toggle .fa-moon {
+    display: none;
+}
+
+.dark-light-toggle .fa-sun {
+    display: inline-block;
+}
+
+#dark-light-toggle:checked ~ .wrapper .dark-light-toggle .fa-sun {
+    display: none;
+}
+
+#dark-light-toggle:checked ~ .wrapper .dark-light-toggle .fa-moon {
+    display: inline-block;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-section {
+    display: none;
+}
+
+#about {
+    display: block;
+}
+
+#about:target, 
+#experience:target, 
+#skills:target, 
+#projects:target, 
+#connect:target{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid var(--section-border);
+    box-shadow: 0 0 18px var(--section-glow);
+    display: block;
+    width: 90%;
+}
+
+body:has(#experience:target) #about, 
+body:has(#skills:target) #about, 
+body:has(#projects:target) #about, 
+body:has(#connect:target) #about {
+    display: none;
+}
+
+.experience-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    position: relative;
+}
+
+.experience-list::before {
+    /* create the timeline linee */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.1rem;
+    width: 3px;
+    background: var(--section-border);
+    box-shadow: 0 0 10px var(--section-glow);
+}
+
+.experience-item {
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.experience-item::before {
+    content: "";
+    position: absolute;
+    left: -1.4rem;
+    top: 2rem;
+    width: 14px;
+    height: 14px;
+    background: var(--heading-color);
+    border: 3px solid var(--nav-bg);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--section-glow);
+    z-index: 2;
+}
+
+.experience-card {
+    background: #219ebc2e;
+    border: 1px solid var(--section-border);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 0 14px #00000026;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.experience-header h3 {
+    margin: 0;
+    color: var(--heading-color);
+    font-size: 1.15rem;
+}
+
+.experience-date {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    white-space: nowrap;
+}
+
+.experience-company {
+    margin: 0 0 0.35rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.experience-description {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+#connect {
+    text-align: center;
+}
+#connect ul {
+    list-style: none; 
+    display: flex; 
+    gap: 30px;
+    justify-content: center;
+}
+
+#connect li { 
+    display: inline-block;
+}
+
+#connect img {
+    width: 30px; 
+    transition: all 0.3s; 
+    filter: brightness(0) invert(1);
+}
+
+#connect img:hover {
+    width: 40px; 
+    filter: 
+        invert(31%)
+        sepia(98%)
+        saturate(1065%)
+        hue-rotate(189deg)
+        brightness(91%)
+        contrast(92%) ;
+}
+
+.fa-brands, .fa-solid {
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.fa-brands:hover, .fa-solid:hover{
+    color: var(--nav-link-bg);
+    font-size: 2em;
+}
+
+.fa-github {
+    color: var(--github-color);
+}
+.fa-linkedin {
+    color: var(--linkedin-color);
+}
+
+.fa-youtube {
+    color: var(--youtube-color);
+}
+
+.fa-envelope {
+    color: var(--envelope-color);
+}
