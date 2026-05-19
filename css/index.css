@@ -329,6 +329,24 @@ body:has(#connect:target) #about {
     opacity: 0.9;
 }
 
+#skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0;
+    margin: 1rem;
+    justify-content: center;
+}
+
+#skills li{
+    color: var(--text-color);
+    border: 2px solid var(--section-border);
+    border-radius: 999px;
+    box-shadow: 0 0 10px var(--section-glow);
+    padding: 1rem;
+}
+
 #connect {
     text-align: center;
 }
