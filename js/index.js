@@ -66,3 +66,8 @@ for(let i = 0; i < skills.length; i++){
     skill.appendChild(text);
     skillsList.appendChild(skill);
 }
+
+// Create variable : messageForm (leave_message)
+// Add event listener for submit
+    // Create 3 new variables, one for each field
+    // use console log to log it out
