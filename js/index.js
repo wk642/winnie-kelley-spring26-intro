@@ -68,6 +68,19 @@ for(let i = 0; i < skills.length; i++){
 }
 
 // Create variable : messageForm (leave_message)
+const messageForm = document.querySelector('form[name="leave_message"]');
+
 // Add event listener for submit
+messageForm.addEventListener("submit", function (event){
+    // Adding prevent default refreshing behavior
+    event.preventDefault();
     // Create 3 new variables, one for each field
+    const usersName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const usersMessage = event.target.usersMessage.value;
+
     // use console log to log it out
+    console.log(`Name: ${usersName}`);
+    console.log(`Email: ${usersEmail}`);
+    console.log(`Message: ${usersMessage}`);
+});
