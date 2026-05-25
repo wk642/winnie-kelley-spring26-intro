@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title> Winnie Kelley's Portfolio</title>
     <meta charset="UTF-8">
@@ -11,8 +11,11 @@
     <!-- adding external css-->
     <link rel="stylesheet" href="css/index.css">
 
-    <!-- adding this for the social media icons from fontawesome -->
+    <!-- adding this for the icons from fontawesome -->
     <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
+    <!-- adding this for icons from devicons -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          
 
     <!-- Adding Google font: Shantell Sans -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,9 +41,9 @@
           id="profile-image" 
           src="assets/images/profileImage.png" 
           alt="profile image of me, Winnie Kelley"/>
+        <h1 id="name">Winnie Kelley</h1>
       </div> <!-- end of profile-image-wrap -->
 
-      <h1 id="name">Winnie Kelley</h1>
 
       <!-- Adding a nav bar -->
       <nav class="main-nav" aria-label="Main navigation">
@@ -193,10 +196,7 @@
 
       <section id="skills" class="content-section">
         <h2>Skills</h2>
-        <ul> 
-          <li>HTML, CSS, JavaScript, React, React Native, TypeScript, Postgres, Node, Express</li>
-          <li>Have previous knowledge of Java, Python, Swift, C++</li>
-        </ul>
+        <ul></ul>
       </section> <!-- end of skills-->
 
       <section id="projects" class="content-section">
@@ -254,5 +254,8 @@
         </ul>
       </section> <!-- end of connect -->
     </div> <!-- end of wrapper -->
+
+    <!-- Adding js file here, putting this here per instructions, or else I would add it in head with defer -->
+     <script src="js/index.js"></script>
   </body>
 </html>
