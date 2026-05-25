@@ -79,8 +79,11 @@ messageForm.addEventListener("submit", function (event){
     const usersEmail = event.target.usersEmail.value;
     const usersMessage = event.target.usersMessage.value;
 
-    // use console log to log it out
+    // Use console log to log it out
     console.log(`Name: ${usersName}`);
     console.log(`Email: ${usersEmail}`);
     console.log(`Message: ${usersMessage}`);
+
+    // Clear the form after
+    event.target.reset();
 });
