@@ -84,6 +84,26 @@ messageForm.addEventListener("submit", function (event){
     console.log(`Email: ${usersEmail}`);
     console.log(`Message: ${usersMessage}`);
 
+    // Create variable messageSection = select by id
+    // Create variable messageList = select by element
+    // Create variable newMessage = create a new li element
+
+    /***
+     * Set newMessage inner HTML to: 
+     * <a> element that displays the "usersName" and is a clickable link to the "usersEmail" (hint: use the mailto: prefix)
+     * <span> element that displays the "usersMessage" 
+     *** */
+
+    // Create a removeButton = makes a new button element
+
+    // Set removeButton innerText  to "remove"
+    // set removeButton type to "button"
+
+    // Add event listener to removeButton
+    // Create variable entry = find the parent element
+    // Remove entry element
+    // Append removeButton to newMessage
+    // Append newMessage to messageList
     // Clear the form after
     event.target.reset();
 });
