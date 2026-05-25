@@ -188,7 +188,8 @@ body:has(#about:target) .main-nav a[href="#about"],
 body:has(#experience:target) .main-nav a[href="#experience"],
 body:has(#skills:target) .main-nav a[href="#skills"],
 body:has(#projects:target) .main-nav a[href="#projects"],
-body:has(#connect:target) .main-nav a[href="#connect"] {
+body:has(#connect:target) .main-nav a[href="#connect"],
+body:has(#leaveMessages:target) .main-nav a[href="#leaveMessages"] {
   background: linear-gradient(135deg, #8ecae6, #ffb703);
   color: black;
   border-color: transparent;
@@ -255,7 +256,8 @@ body:has(#connect:target) .main-nav a[href="#connect"] {
 #experience:target, 
 #skills:target, 
 #projects:target, 
-#connect:target{
+#connect:target,
+#leaveMessages:target{
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
@@ -268,7 +270,8 @@ body:has(#connect:target) .main-nav a[href="#connect"] {
 body:has(#experience:target) #about, 
 body:has(#skills:target) #about, 
 body:has(#projects:target) #about, 
-body:has(#connect:target) #about {
+body:has(#connect:target) #about,
+body:has(#leaveMessages:target) #about {
     display: none;
 }
 
@@ -487,7 +490,8 @@ footer {
     #experience:target,
     #skills:target,
     #projects:target,
-    #connect:target {
+    #connect:target,
+    #leaveMessages:target {
         width: 95%;
     }
 
@@ -571,7 +575,8 @@ footer {
     #experience:target,
     #skills:target,
     #projects:target,
-    #connect:target {
+    #connect:target,
+    #leaveMessages:target {
         width: 100%;
         margin: 0.5rem 0;
         padding: 0.85rem;
@@ -688,7 +693,8 @@ footer {
     #experience:target,
     #skills:target,
     #projects:target,
-    #connect:target {
+    #connect:target,
+    #leaveMessages:target {
         padding: 0.75rem;
         border-radius: 8px;
     }
