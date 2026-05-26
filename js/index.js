@@ -85,25 +85,45 @@ messageForm.addEventListener("submit", function (event){
     console.log(`Message: ${usersMessage}`);
 
     // Create variable messageSection = select by id
+    const messageSection = document.getElementById("messages");
     // Create variable messageList = select by element
+    const messageList = messageSection.querySelector("ul");
     // Create variable newMessage = create a new li element
+    const newMessage = document.createElement("li");
 
     /***
      * Set newMessage inner HTML to: 
      * <a> element that displays the "usersName" and is a clickable link to the "usersEmail" (hint: use the mailto: prefix)
      * <span> element that displays the "usersMessage" 
      *** */
-
+    newMessage.innerHTML = `
+        <a href="mailto:${usersEmail}">${usersName}</a>
+        <span>${usersMessage}</span>
+    `;
+    
     // Create a removeButton = makes a new button element
+    const removeButton = document.createElement("button");
 
     // Set removeButton innerText  to "remove"
+    removeButton.innerText = "remove";
+
     // set removeButton type to "button"
+    removeButton.type = "button";
 
     // Add event listener to removeButton
-    // Create variable entry = find the parent element
-    // Remove entry element
+    removeButton.addEventListener("click", function() {
+        // Create variable entry = find the parent element
+        const entry = removeButton.parentNode;
+
+        // Remove entry element
+        entry.remove();
+    })
     // Append removeButton to newMessage
+    newMessage.appendChild(removeButton);
+
     // Append newMessage to messageList
+    messageList.appendChild(newMessage);
+
     // Clear the form after
     event.target.reset();
 });
