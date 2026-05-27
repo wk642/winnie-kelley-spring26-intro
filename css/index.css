@@ -462,6 +462,40 @@ body:has(#leaveMessages:target) #messages:has(ul:empty) {
     color: var(--envelope-color);
 }
 
+#leaveMessages form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#leaveMessages label {
+    display: block;
+    text-align: left;
+    line-height: 0.3;
+    margin: 0;
+}
+
+#leaveMessages input,
+#leaveMessages textarea {
+    width: 100%;
+    padding: 0.3rem 0.4rem;
+    border: 2px solid var(--section-border);
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#leaveMessages button[type="submit"] {
+    padding: 0.45rem 0.3rem;
+    margin-top: 0.5rem;
+    min-height: 44px;
+    border-radius: 8px;
+    border: 2px solid var(--section-border);
+    background: var(--nav-link-bg);
+    color: var(--nav-link-color);
+    cursor: pointer;
+}
+
 .messages-layout {
     display: none;
     gap: 2rem;
