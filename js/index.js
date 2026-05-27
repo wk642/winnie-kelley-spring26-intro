@@ -103,14 +103,29 @@ messageForm.addEventListener("submit", function (event){
     
     // Stretch goal: Add edit button
     // Create a edit button 
-    // Set editButton text to edit
+    const editButton = document.createElement("button");
+
+    // Set editButton text to edit / icon
+    editButton.innerHTML = '<i class="fa-solid fa-pencil"></i>';
+
     // Set editButton type to button
+    editButton.type = "button";
+
     // Add event listener to editButton
+    editButton.addEventListener("click", function() {
+        // Get the span inside the current message
+        const messageText = newMessage.querySelector("span");
+        // Open up the prompt with the current message
+        const updatedMessage = prompt("Edit your message:", messageText.textContent);
+        // Update the message with what the user typed in the prompt
+        messageText.textContent = updatedMessage;
+    });
+
     // Create a removeButton = makes a new button element
     const removeButton = document.createElement("button");
 
     // Set removeButton innerText  to "remove"
-    removeButton.innerText = "remove";
+    removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
 
     // set removeButton type to "button"
     removeButton.type = "button";
@@ -123,6 +138,10 @@ messageForm.addEventListener("submit", function (event){
         // Remove entry element
         entry.remove();
     })
+
+    // Append edit button to newMessage
+    newMessage.appendChild(editButton);
+
     // Append removeButton to newMessage
     newMessage.appendChild(removeButton);
 
