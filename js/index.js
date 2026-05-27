@@ -101,6 +101,11 @@ messageForm.addEventListener("submit", function (event){
         <span>${usersMessage}</span>
     `;
     
+    // Stretch goal: Add edit button
+    // Create a edit button 
+    // Set editButton text to edit
+    // Set editButton type to button
+    // Add event listener to editButton
     // Create a removeButton = makes a new button element
     const removeButton = document.createElement("button");
 
