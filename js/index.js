@@ -127,6 +127,9 @@ messageForm.addEventListener("submit", function (event){
     // Set removeButton innerText  to "remove"
     removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
 
+    // Adding aria-label
+    removeButton.setAttribute('aria-label', 'remove');
+    
     // set removeButton type to "button"
     removeButton.type = "button";
 
