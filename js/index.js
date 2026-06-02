@@ -154,3 +154,20 @@ messageForm.addEventListener("submit", function (event){
     // Clear the form after
     event.target.reset();
 });
+
+// lesson 9 APIs - fetching github API  for projects section
+
+// fetch api `https://api.github.com/users/{GITHUB_USERNAME}/repos` 
+
+// Chain then method
+
+// returns the response JSON data
+
+// Chain another then method
+
+// Create variable repositories, store returned data in it
+
+// Console log the values of repositories
+
+// Chain catch for error handling
+
