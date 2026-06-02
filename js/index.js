@@ -156,9 +156,15 @@ messageForm.addEventListener("submit", function (event){
 });
 
 // lesson 9 APIs - fetching github API  for projects section
+// Create variable projectSection (select by id)
+const projectSection = document.getElementById("projects");
+
+// Create variable projectList (query the ul)
+const projectList = projectSection.querySelector("ul");
 
 // fetch api `https://api.github.com/users/{GITHUB_USERNAME}/repos` 
 // adding query parameter to increase the numbers of repos displayed
+// to test the error handling change wk642 to wk1642 to see the message
 fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
     // Chain then method
     .then (function(response) {
@@ -175,12 +181,6 @@ fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
             return repo.owner.login === "wk642" && !repo.fork;
         }) 
 
-        // Create variable projectSection (select by id)
-        const projectSection = document.getElementById("projects");
-
-        // Create variable projectList (query the ul)
-        const projectList = projectSection.querySelector("ul");
-
         // Create loop to go over each repo starting at 0
         for (let i = 0; i < myRepos.length; i++) {
             // Create variable project (createElement li)
@@ -194,4 +194,7 @@ fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
         }
     })
     // Chain catch for error handling
-    .catch(function(error){console.log(error);});
+    .catch(function(error){
+        console.log(error);
+        projectList.innerHTML = "Sorry, my projects could not load right now. I am working on a fix";
+    });
