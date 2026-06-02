@@ -170,16 +170,22 @@ fetch(`https://api.github.com/users/wk642/repos`)
         console.log(repositories);
 
         // Create variable projectSection (select by id)
+        const projectSection = document.getElementById("projects");
 
         // Create variable projectList (query the ul)
+        const projectList = projectSection.querySelector("ul");
 
         // Create loop to go over each repo starting at 0
-
+        for (let i = 0; i < repositories.length; i++) {
             // Create variable project (createElement li)
+            const project = document.createElement("li");
 
             // Set innerText of project to repo name with bracket notation
+            project.innerText = repositories[i].name;
 
             // Append project to projectList
+            projectList.appendChild(project);
+        }
     })
     // Chain catch for error handling
     .catch(function(error){console.log(error);});
