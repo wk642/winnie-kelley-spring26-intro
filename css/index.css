@@ -406,6 +406,33 @@ body:has(#leaveMessages:target) #messages:has(ul:empty) {
     font-size: 1.5rem;
 }
 
+#projects ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0;
+    margin: 1rem;
+    justify-content: center;
+}
+
+#projects li {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    border: 2px solid var(--section-border);
+    border-radius: 12px;
+    box-shadow: 0 0 10px var(--section-glow);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
 #connect {
     text-align: center;
 }
@@ -813,6 +840,17 @@ footer {
         font-size: 1rem;
     }
 
+    #projects ul {
+        gap: 16px;
+        margin: 0.75rem 0;
+    }
+
+    #projects li {
+        width: calc(50% - 8px);
+        max-width: 160px;
+        height: 120px;
+    }
+
     #connect ul {
         flex-wrap: wrap;
         gap: 20px;
@@ -922,6 +960,12 @@ footer {
         font-size: 0.95rem;
     }
 
+    #projects li {
+        width: 100%;
+        max-width: none;
+        height: 110px;
+    }
+    
     #connect ul {
         gap: 16px;
     }
