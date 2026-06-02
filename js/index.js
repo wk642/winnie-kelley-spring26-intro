@@ -66,3 +66,91 @@ for(let i = 0; i < skills.length; i++){
     skill.appendChild(text);
     skillsList.appendChild(skill);
 }
+
+// Create variable : messageForm (leave_message)
+const messageForm = document.querySelector('form[name="leave_message"]');
+
+// Add event listener for submit
+messageForm.addEventListener("submit", function (event){
+    // Adding prevent default refreshing behavior
+    event.preventDefault();
+    // Create 3 new variables, one for each field
+    const usersName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const usersMessage = event.target.usersMessage.value;
+
+    // Use console log to log it out
+    console.log(`Name: ${usersName}`);
+    console.log(`Email: ${usersEmail}`);
+    console.log(`Message: ${usersMessage}`);
+
+    // Create variable messageSection = select by id
+    const messageSection = document.getElementById("messages");
+    // Create variable messageList = select by element
+    const messageList = messageSection.querySelector("ul");
+    // Create variable newMessage = create a new li element
+    const newMessage = document.createElement("li");
+
+    /***
+     * Set newMessage inner HTML to: 
+     * <a> element that displays the "usersName" and is a clickable link to the "usersEmail" (hint: use the mailto: prefix)
+     * <span> element that displays the "usersMessage" 
+     *** */
+    newMessage.innerHTML = `
+        <a href="mailto:${usersEmail}">${usersName}</a>
+        <span>${usersMessage}</span>
+    `;
+    
+    // Stretch goal: Add edit button
+    // Create a edit button 
+    const editButton = document.createElement("button");
+
+    // Set editButton text to edit / icon
+    editButton.innerHTML = '<i class="fa-solid fa-pencil"></i>';
+
+    // Set editButton type to button
+    editButton.type = "button";
+
+    // Add event listener to editButton
+    editButton.addEventListener("click", function() {
+        // Get the span inside the current message
+        const messageText = newMessage.querySelector("span");
+        // Open up the prompt with the current message
+        const updatedMessage = prompt("Edit your message:", messageText.textContent);
+        // Update the message with what the user typed in the prompt
+        messageText.textContent = updatedMessage;
+    });
+
+    // Create a removeButton = makes a new button element
+    const removeButton = document.createElement("button");
+
+    // Set removeButton innerText  to "remove"
+    removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+
+    // Adding aria-label
+    removeButton.setAttribute('aria-label', 'remove');
+    
+    // set removeButton type to "button"
+    removeButton.type = "button";
+
+    // Add event listener to removeButton
+    removeButton.addEventListener("click", function() {
+        // Create variable entry = find the parent element
+        const entry = removeButton.parentNode;
+
+        // Remove entry element
+        entry.remove();
+    })
+
+    // Append edit button to newMessage
+    newMessage.appendChild(editButton);
+
+    // Append removeButton to newMessage
+    newMessage.appendChild(removeButton);
+
+    // Append newMessage to messageList
+    messageList.appendChild(newMessage);
+
+    // Clear the form after
+    event.target.reset();
+});

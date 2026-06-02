@@ -53,6 +53,8 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#connect">Connect</a></li>
+          <li><a href="#leaveMessages">Leave a Message</a></li>
+          <!-- add message section here -->
         </ul>
         <!-- Adding dark and light mode button here --> 
         <label for="dark-light-toggle" class="dark-light-toggle" aria-label="Toggle between dark and light mode">
@@ -253,6 +255,41 @@
           </li>
         </ul>
       </section> <!-- end of connect -->
+
+      <!-- Adding a wrapper for leaveMessages and messages for styling purposes -->
+      <div class="messages-layout">
+        <!-- Adding lesson 8's section for leave a message "leaveMessages"-->
+        <section id="leaveMessages" class="content-section">
+          <!-- Create a level 2 heading : Leave a Message -->
+          <h2>Leave a Message</h2>
+          <!-- Create form : leave_message ; eadch field has a corresponding label -->
+          <form name="leave_message">
+            <!-- use <br> tol stack -->
+            <!-- input = type "text", name "usersName", requried -->
+            <label class="form-labels" for="usersName">Name</label> <br>
+            <input type="text" id="usersName" name="usersName" required> <br>
+  
+            <!-- input = type "email", name "usersEmail" required-->
+            <label class="form-labels" for="usersEmail">Email</label> <br>
+            <input type="email" id="usersEmail" name="usersEmail" required> <br>
+  
+            <!-- textarea = name "usersMessage", required-->
+            <label class="form-labels" for="usersMessage">Message</label> <br>
+            <textarea id="usersMessage" name="usersMessage" required></textarea> <br>
+            
+            <!-- button = type "Submit" says submit-->
+            <button type="submit">Submit</button> <br>
+          </form>
+        </section> <!-- end of leaveMessages -->
+  
+        <!-- Add section : messages -->
+        <section id="messages" class="content-section">
+          <!-- Add level-two heading : Messages-->
+          <h2>Messages</h2>
+          <!-- Add empty ul -->
+          <ul></ul>
+        </section>
+      </div>
     </div> <!-- end of wrapper -->
 
     <!-- Adding js file here, putting this here per instructions, or else I would add it in head with defer -->
