@@ -158,7 +158,8 @@ messageForm.addEventListener("submit", function (event){
 // lesson 9 APIs - fetching github API  for projects section
 
 // fetch api `https://api.github.com/users/{GITHUB_USERNAME}/repos` 
-fetch(`https://api.github.com/users/wk642/repos`)
+// adding query parameter to increase the numbers of repos displayed
+fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
     // Chain then method
     .then (function(response) {
         // returns the response JSON data
