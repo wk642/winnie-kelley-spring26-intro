@@ -169,6 +169,11 @@ fetch(`https://api.github.com/users/wk642/repos`)
         // Console log the values of repositories
         console.log(repositories);
 
+        // Adding filter here so that only my repos, no forked ones I contributed on displays
+        const myRepos = repositories.filter(function(repo){
+            return repo.owner.login === "wk642" && !repo.fork;
+        }) 
+
         // Create variable projectSection (select by id)
         const projectSection = document.getElementById("projects");
 
@@ -176,12 +181,12 @@ fetch(`https://api.github.com/users/wk642/repos`)
         const projectList = projectSection.querySelector("ul");
 
         // Create loop to go over each repo starting at 0
-        for (let i = 0; i < repositories.length; i++) {
+        for (let i = 0; i < myRepos.length; i++) {
             // Create variable project (createElement li)
             const project = document.createElement("li");
 
             // Set innerText of project to repo name with bracket notation
-            project.innerText = repositories[i].name;
+            project.innerText = myRepos[i].name;
 
             // Append project to projectList
             projectList.appendChild(project);
