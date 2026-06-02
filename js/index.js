@@ -158,16 +158,28 @@ messageForm.addEventListener("submit", function (event){
 // lesson 9 APIs - fetching github API  for projects section
 
 // fetch api `https://api.github.com/users/{GITHUB_USERNAME}/repos` 
+fetch(`https://api.github.com/users/wk642/repos`)
+    // Chain then method
+    .then (function(response) {
+        // returns the response JSON data
+        return response.json();
+    })
+    // Chain another then method passing in variable, repositories 
+    .then (function(repositories) {
+        // Console log the values of repositories
+        console.log(repositories);
 
-// Chain then method
+        // Create variable projectSection (select by id)
 
-// returns the response JSON data
+        // Create variable projectList (query the ul)
 
-// Chain another then method
+        // Create loop to go over each repo starting at 0
 
-// Create variable repositories, store returned data in it
+            // Create variable project (createElement li)
 
-// Console log the values of repositories
+            // Set innerText of project to repo name with bracket notation
 
-// Chain catch for error handling
-
+            // Append project to projectList
+    })
+    // Chain catch for error handling
+    .catch(function(error){console.log(error);});
