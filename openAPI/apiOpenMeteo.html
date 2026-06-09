@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Open API - Weather</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Open API - Open Meteo">
-    <meta name="keywords" content="Weather Open API, HTML, CSS">
-    <meta name="author" content="Winnie Kelley">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Open API - Weather</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Open API - Open Meteo">
+        <meta name="keywords" content="Weather Open API, HTML, CSS">
+        <meta name="author" content="Winnie Kelley">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Adding external css-->
-    <link rel="stylesheet" href="apiOpenMeteo.css">
+        <!-- Adding external css-->
+        <link rel="stylesheet" href="apiOpenMeteo.css">
 
-    <!-- Adding js -->
-    <script src="apiOpenMeteo.js" defer></script>
-</head>
-<body>
-    <!-- Adding nav bar -->
-     <nav class="main-nav" aria-label="Main navigation">
-       <ul>
-          <li><a href="../index.html">About</a></li>
-        </ul>
-    </nav>
+        <!-- Adding js -->
+        <script src="apiOpenMeteo.js" defer></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <!-- Adding nav bar -->
+                <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="../index.html">About</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-    OPEN API WEATHER
-</body>
+            <div class="content">
+                OPEN API WEATHER
+                <!-- Instructions sectoin -->
+                <section id="intstructions" class="content-section">
+                    <h3> You can use your current location, search for a location, or randomly select a location to get the city's weather, joke and a dog </h3>
+                </section> <!-- End of instructions -->
+
+                <!-- Search bar -->
+                <section id="search-bar" class="content-section">
+                    <p>Search bar here</p>
+                </section> <!-- End of search bar -->
+
+                <!-- Display weather -->
+                <section id="display-weather" class="content-section">
+                    <p>Display weather here</p>
+                </section> <!-- End of display weather -->
+
+                <!-- Display joke -->
+                <section id="display-joke" class="content-section">
+                    <p>Display joke here</p>
+                </section> <!-- End of display joke -->
+
+                <!-- Display dog -->
+                <section id="display-dog" class="content-section">
+                    <p>Display dog here</p>
+                </section> <!-- End of display dog -->
+            </div> <!-- End of content -->
+        </div> <!-- End of wrapper -->
+    </body>
 </html>
