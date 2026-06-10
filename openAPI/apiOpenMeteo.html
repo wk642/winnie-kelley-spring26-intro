@@ -49,11 +49,25 @@
             </section> <!-- End of search bar -->
 
             <!-- Display weather -->
+            <!-- Adding buttons to allow user to display what they want -->
             <section id="display-weather" class="content-section">
-                <h2><span id="weather-location">City's Weather</span></h2>
+                <!-- <h2><span id="weather-location">City's Weather</span></h2>
 
                 <p>Temperature: <span id="temperature"></span></p>
-                <p>Feels Like: <span id="feelsLike"></span></p>
+                <p>Feels Like: <span id="feelsLike"></span></p> -->
+
+                <section id="weather-options" class="content-section" hidden>
+                    <button id="show-temp" type="button">See Temp</button>
+                    <button id="show-feels-like" type="button">See Feels Like</button>
+                </section>
+                
+                <section id="display-weather" class="content-section">
+                    <h2 id="weather-location">City's Weather</h2>
+                    <p>
+                        <span id="weather-label">Weather:</span>
+                        <span id="weather-value"></span>
+                    </p>
+                </section>
 
             </section> <!-- End of display weather -->
 
