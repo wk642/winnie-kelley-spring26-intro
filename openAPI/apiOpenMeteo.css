@@ -1,1 +1,29 @@
-/* CSS for open-meteo */
+.main-nav {
+    padding: 1rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;    
+}
+
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 1rem;
+    font-size: 1.5rem;
+    border: 2px solid;
+    border-radius: 12px;
+    padding: 0.5rem;
+}
+
+.back-button:hover i{
+    animation: fa-spin 0.5s;
+}
