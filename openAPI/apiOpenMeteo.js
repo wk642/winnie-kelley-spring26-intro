@@ -8,6 +8,12 @@ const weatherLocation = document.querySelector("#weather-location");
 // temperature
 const temperature = document.querySelector("#temperature");
 
+cityInput.addEventListener("input", function () {
+    weatherLocation.textContent = cityInput.value
+        ?`${cityInput.value}'s Weather`
+        : "City's Weather";
+});
+
 // function geocoding user's city for get long and lat
 async function geocoding(cityName) {
     // set url
