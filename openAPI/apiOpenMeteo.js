@@ -7,6 +7,8 @@ const cityInput = document.querySelector("#city-input");
 const weatherLocation = document.querySelector("#weather-location");
 // temperature
 const temperature = document.querySelector("#temperature");
+// feels like
+const feelsLike = document.querySelector("#feelsLike");
 
 cityInput.addEventListener("input", function () {
     weatherLocation.textContent = cityInput.value
