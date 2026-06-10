@@ -20,6 +20,9 @@ async function geocoding(cityName) {
     const geocodingUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${cityName}&count=1&language=en&format=json`;
 
     const response = await fetch(geocodingUrl);
+    if(!response.ok) {
+        throw new Error("Loading geocoding failed");
+    }
     const data = await response.json();
 
     return data.results ? data.results[0] : null;
@@ -31,6 +34,9 @@ async function getWeather(latitude, longitude) {
     const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&temperature_unit=fahrenheit`;
 
     const response = await fetch(weatherUrl);
+    if(!response.ok) {
+        throw new Error("Loading weather failed")
+    }
     const data = await response.json();
 
     return data;
@@ -47,10 +53,16 @@ weatherForm.addEventListener("submit", async function(event){
     try {
         // get location
         const location = await geocoding(cityName);
+
+        // error handling: if city doesn't exist
+        if (!location) {
+            weatherLocation.textContent = `${cityName}'s Weather`;
+            temperature.textContent = "City not found.";
+            return;
+        }
+        
         // get long and lat
         const weatherData = await getWeather(location.latitude, location.longitude);
-        // update location name
-        weatherLocation.textContent = location.name;
         // update temperature
         temperature.textContent = `${weatherData.current.temperature_2m}°F`;
     } catch (error) {
