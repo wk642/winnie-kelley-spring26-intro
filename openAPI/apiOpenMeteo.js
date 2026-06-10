@@ -31,7 +31,7 @@ async function geocoding(cityName) {
 // function getWeather
 async function getWeather(latitude, longitude) {
     // set url
-    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&temperature_unit=fahrenheit`;
+    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature&temperature_unit=fahrenheit`;
 
     const response = await fetch(weatherUrl);
     if(!response.ok) {
@@ -60,11 +60,11 @@ weatherForm.addEventListener("submit", async function(event){
             temperature.textContent = "City not found.";
             return;
         }
-        
         // get long and lat
         const weatherData = await getWeather(location.latitude, location.longitude);
         // update temperature
         temperature.textContent = `${weatherData.current.temperature_2m}°F`;
+        feelsLike.textContent = `${weatherData.current.apparent_temperature}°F`;
     } catch (error) {
         // display error message
         weatherLocation.textContent = "";
