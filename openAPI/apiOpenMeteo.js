@@ -60,6 +60,7 @@ weatherForm.addEventListener("submit", async function(event){
         if (!location) {
             weatherLocation.textContent = `${cityName}'s Weather`;
             temperature.textContent = "City not found.";
+            feelsLike.textContent = ""
             return;
         }
         // get long and lat
@@ -71,6 +72,7 @@ weatherForm.addEventListener("submit", async function(event){
         // display error message
         weatherLocation.textContent = "";
         temperature.textContent = "No weather loaded"
+        feelsLike.textContent = "";
         // console.error
         console.error("Error: ", error);
     }
