@@ -41,12 +41,18 @@
 
             <!-- Search bar -->
             <section id="search-bar" class="content-section">
-                <p>Search bar here</p>
+                <form id="weather-form">
+                    <label for="city-input">Enter a city:</label>
+                    <input type="text" id="city-input" name="city" required>
+                    <button type="submit">Submit</button>
+                </form>
             </section> <!-- End of search bar -->
 
             <!-- Display weather -->
             <section id="display-weather" class="content-section">
-                <p>Display weather here</p>
+                <h2><span id="weather-location">'s Weather</span></h2>
+
+                <p>Temperature: <span id="temperature"></span></p>
             </section> <!-- End of display weather -->
 
             <!-- Display joke -->
