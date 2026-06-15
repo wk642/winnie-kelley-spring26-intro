@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Open API - Weather</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Open API - Open Meteo">
+    <meta name="keywords" content="Weather Open API, HTML, CSS">
+    <meta name="author" content="Winnie Kelley">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adding external css-->
+    <link rel="stylesheet" href="apiOpenMeteo.css">
+
+    <!-- Adding for icons from fontawesome -->
+    <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
+
+    <!-- Adding js -->
+    <script src="apiOpenMeteo.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <!-- Adding nav bar -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li>
+                        <a href="../index.html" class="back-button">
+                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <h3>OPEN API WEATHER</h3>
+            <!-- Instructions sectoin -->
+            <section id="instructions" class="content-section">
+                <h3> You can use your current location, search for a location, or randomly select a location to get the city's weather, joke and a dog </h3>
+                <p> Randomly select, joke and dog is coming soon</p>
+            </section> <!-- End of instructions -->
+
+            <!-- Search bar -->
+            <section id="search-bar" class="content-section">
+                <form id="weather-form">
+                    <label for="city-input">Enter a city:</label>
+                    <input type="text" id="city-input" name="city" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </section> <!-- End of search bar -->
+
+            <!-- Display weather -->
+            <!-- Adding buttons to allow user to display what they want -->
+            <section id="weather-options" class="content-section" hidden>
+                <button id="show-temp" type="button">See Temp</button>
+                <button id="show-feels-like" type="button">See Feels Like</button>
+            </section>
+            
+            <section id="display-weather" class="content-section">
+                <h2 id="weather-location">City's Weather</h2>
+                <p>
+                    <span id="weather-label">Weather:</span>
+                    <span id="weather-value"></span>
+                </p>
+            </section>
+
+            <!-- Display joke -->
+             <!--
+            <section id="display-joke" class="content-section">
+                <p>Display joke here</p>
+                <p>Coming Soon!</p>
+            </section> --><!-- End of display joke -->
+            
+            <!-- Display dog -->
+            <!--
+            <section id="display-dog" class="content-section">
+                <p>Display dog here</p>
+                <p>Coming Soon!</p>
+            </section> --><!-- End of display dog -->
+        </div> <!-- End of content -->
+    </div> <!-- End of wrapper -->
+</body>
+</html>
