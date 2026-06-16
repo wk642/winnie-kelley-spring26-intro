@@ -193,8 +193,15 @@ fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
             projectLink.href = myRepos[i].html_url;
             // open link in new tab
             projectLink.target = "_blank";
-            //Append projectLink to project
+
+            // Adding language used
+            const language = document.createElement("p");
+            language.innerText = `Language: ${myRepos[i].language || "No language specificed"}`;
+
+            // Append projectLink to project
             project.appendChild(projectLink);
+            // Append language to project
+            project.appendChild(language);
             // Append project to projectList
             projectList.appendChild(project);
         }
