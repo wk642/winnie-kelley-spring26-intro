@@ -198,10 +198,17 @@ fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
             const language = document.createElement("p");
             language.innerText = `Language: ${myRepos[i].language || "No language specificed"}`;
 
+            // Adding last updated
+            const lastUpdated = document.createElement("p");
+            const lastUpdatedDate = new Date(myRepos[i].updated_at).toLocaleDateString();
+            lastUpdated.innerText = `Last updated: ${lastUpdatedDate}`;
+
             // Append projectLink to project
             project.appendChild(projectLink);
             // Append language to project
             project.appendChild(language);
+            //Append lastUpdated 
+            project.appendChild(lastUpdated);
             // Append project to projectList
             projectList.appendChild(project);
         }
