@@ -9,7 +9,7 @@
 
 /* Setting up dark and light mode */
 
-/* Hide the checkbox */
+/* Hide the checkbox */ 
 .mode-switch {
     position: absolute;
     opacity: 0;
@@ -97,6 +97,7 @@ h2 {
     color: var(--heading-color);
 }
 
+/* profile image */
 .profile-image-wrap {
     display: flex;
     flex-direction: column;
@@ -120,6 +121,7 @@ h2 {
         drop-shadow(0 -2px 0 var(--profile-outline))
         drop-shadow(0 0 12px var(--profile-glow));
 }
+/* end of profile image */
 
 #name{
     margin: 0;
@@ -250,6 +252,9 @@ body:has(#leaveMessages:target) .main-nav a[href="#leaveMessages"] {
 
 #about {
     display: block;
+    border-radius: 10px;
+    border: 2px solid var(--section-border);
+    box-shadow: 0 0 18px var(--section-glow);
 }
 
 #about:target, 
