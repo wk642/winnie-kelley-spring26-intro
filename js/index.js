@@ -218,3 +218,21 @@ fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
         console.log(error);
         projectList.innerHTML = "Sorry, my projects could not load right now. I am working on a fix";
     });
+
+// Adding hamburger nav - optional
+const navSwitch = document.querySelector(".nav-switch");
+const hamburgerNav = document.querySelector("#hamburgerNav");
+
+if (navSwitch && hamburgerNav) {
+    const navIcon = navSwitch.querySelector("i");
+
+    navSwitch.addEventListener("click", function () {
+        const isOpen = hamburgerNav.classList.toggle("open");
+
+        navSwitch.setAttribute("aria-expanded", String(isOpen));
+
+        navIcon.className = isOpen
+            ? "fa-solid fa-xmark"
+            : "fa-solid fa-bars";
+    });
+}

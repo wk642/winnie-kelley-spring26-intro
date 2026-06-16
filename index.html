@@ -12,7 +12,12 @@
     <link rel="stylesheet" href="css/index.css">
 
     <!-- adding this for the icons from fontawesome -->
-    <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script> -->
+    <!-- Switching to this temporarily to fix hamburger and x switch not showing after initial load -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <!-- adding this for icons from devicons -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
           
@@ -44,9 +49,18 @@
         <h1 id="name">Winnie Kelley</h1>
       </div> <!-- end of profile-image-wrap -->
 
-
+      <!-- Add hamburger nav for smaller screens - Optional -->
+      <button 
+        class="nav-switch" 
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="hamburgerNav"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      
       <!-- Adding a nav bar -->
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="main-nav" id="hamburgerNav" aria-label="Main navigation">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
