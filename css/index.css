@@ -1,12 +1,3 @@
-/* color pallette
-    - Light Blue #8ecae6
-    - Blue Green #219ebc
-    - Blue #023047
-    - Dark Blue #001018
-    - Light Orange #ffb703
-    - Dark Orange #fb8500
-*/
-
 /* Setting up dark and light mode */
 
 /* Hide the checkbox */ 
@@ -17,52 +8,51 @@
 }
 
 /* Dark mode as default first */
-/* Dark mode default */
 :root {
-    --bg-color: #001018;
-    --text-color: #8ecae6;
-    --heading-color: #ffb703;
-    --profile-outline: #8ecae6;
-    --profile-glow: #ffb703;
-    --nav-bg: #023047;
-    --nav-border: #8ecae6;
-    --nav-link-color: #ffffff;
-    --nav-link-bg: #219ebc;
-    --nav-hover-color: #8ecae6;
-    --nav-hover-border: #219ebc;
-    --section-border: #8ecae6;
-    --section-glow: #ffb703;
-    --focus-outline: #fb8500;
-    --github-color: #ffffff;
-    --linkedin-color: #0a66c2;
-    --youtube-color: #ff0000;
-    --envelope-color: #ffffff;
-    --toggle-border: #8ecae6;
-    --toggle-icon: #ffb703;
+    --bg-color: #0f172a;
+    --text-color: #dbeafe;
+    --heading-color: #fbbf24;
+    --profile-outline: #7dd3fc;
+    --profile-glow: #f59e0b;
+    --nav-bg: #1e293b;
+    --nav-border: #38bdf8;
+    --nav-link-color: #f8fafc;
+    --nav-link-bg: #0ea5e9;
+    --nav-hover-color: #e0f2fe;
+    --nav-hover-border: #38bdf8;
+    --section-border: #38bdf8;
+    --section-glow: #f59e0b;
+    --focus-outline: #fb923c;
+    --github-color: #f8fafc;
+    --linkedin-color: #60a5fa;
+    --youtube-color: #ff4d4d;
+    --envelope-color: #f8fafc;
+    --toggle-border: #7dd3fc;
+    --toggle-icon: #fbbf24;
 }
 
 /* Light mode when checkbox is checked */
 #dark-light-toggle:checked ~ .wrapper {
     --bg-color: #f8fbfd;
-    --text-color: #023047;
-    --heading-color: #fb8500;
-    --profile-outline: #219ebc;
-    --profile-glow: #ffb703;
-    --nav-bg: #8ecae6;
-    --nav-border: #219ebc;
-    --nav-link-color: #001018;
-    --nav-link-bg: #ffb703;
-    --nav-hover-color: #023047;
-    --nav-hover-border: #219ebc;
-    --section-border: #219ebc;
-    --section-glow: #fb8500;
-    --focus-outline: #fb8500;
-    --github-color: #023047;
+    --text-color: #1e293b;
+    --heading-color: #ea580c;
+    --profile-outline: #0ea5e9;
+    --profile-glow: #fbbf24;
+    --nav-bg: #dbeafe;
+    --nav-border: #38bdf8;
+    --nav-link-color: #0f172a;
+    --nav-link-bg: #fbbf24;
+    --nav-hover-color: #0f172a;
+    --nav-hover-border: #0ea5e9;
+    --section-border: #38bdf8;
+    --section-glow: #fb923c;
+    --focus-outline: #ea580c;
+    --github-color: #1e293b;
     --linkedin-color: #0a66c2;
     --youtube-color: #ff0000;
-    --envelope-color: #023047;
-    --toggle-border: #219ebc;
-    --toggle-icon: #fb8500;
+    --envelope-color: #1e293b;
+    --toggle-border: #0ea5e9;
+    --toggle-icon: #ea580c;
 }
 
 html, body {
