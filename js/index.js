@@ -185,10 +185,16 @@ fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
         for (let i = 0; i < myRepos.length; i++) {
             // Create variable project (createElement li)
             const project = document.createElement("li");
-
-            // Set innerText of project to repo name with bracket notation
-            project.innerText = myRepos[i].name;
-
+            // Create variable projectLink for linking
+            const projectLink = document.createElement("a");
+            // Set innerText of project to repo name with bracket notation 
+            // Changing to innerText of projectLink for optional part on rubic
+            projectLink.innerText = myRepos[i].name;
+            projectLink.href = myRepos[i].html_url;
+            // open link in new tab
+            projectLink.target = "_blank";
+            //Append projectLink to project
+            project.appendChild(projectLink);
             // Append project to projectList
             projectList.appendChild(project);
         }
