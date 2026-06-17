@@ -36,8 +36,10 @@
             <h3>OPEN API WEATHER</h3>
             <!-- Instructions sectoin -->
             <section id="instructions" class="content-section">
-                <h3> You can use your current location, search for a location, or randomly select a location to get the city's weather, joke and a dog </h3>
-                <p> Randomly select, joke and dog is coming soon</p>
+                <!-- <h3> You can use your current location, search for a location, or randomly select a location to get the city's weather, joke and a dog </h3> --> 
+                <!-- <p> Randomly select, joke and dog is coming soon</p> -->
+                 <!-- Temporary title -->
+                <h3>Search for your location and watch the background change based on the weather</h3>
             </section> <!-- End of instructions -->
 
             <!-- Search bar -->
@@ -62,6 +64,12 @@
                     <span id="weather-label">Weather:</span>
                     <span id="weather-value"></span>
                 </p>
+
+                <!-- Adding a loading spinner per the suggestion of reviewer. -->
+                <div id="weather-loading" class="loading-wrap" hidden role="status" aria-live="polite">
+                    <div id="loading-weather" class="spinner" aria-hidden="true"</div>
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                </div>
             </section>
 
             <!-- Display joke -->

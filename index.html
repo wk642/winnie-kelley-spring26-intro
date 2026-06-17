@@ -12,7 +12,12 @@
     <link rel="stylesheet" href="css/index.css">
 
     <!-- adding this for the icons from fontawesome -->
-    <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script> -->
+    <!-- Switching to this temporarily to fix hamburger and x switch not showing after initial load -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <!-- adding this for icons from devicons -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
           
@@ -44,9 +49,18 @@
         <h1 id="name">Winnie Kelley</h1>
       </div> <!-- end of profile-image-wrap -->
 
+      <!-- Add hamburger nav for smaller screens - Optional -->
+      <button 
+        class="nav-switch" 
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="hamburgerNav"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
 
       <!-- Adding a nav bar -->
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="main-nav" id="hamburgerNav" aria-label="Main navigation">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -81,7 +95,7 @@
                 <span class="experience-date">May 2026 - Current</span>
               </div>
               <p class="experience-company">Clever</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">Providing support to school districts with making sure that their data is synced with Clever.</p>
             </div>
           </li>
     
@@ -92,7 +106,7 @@
                 <span class="experience-date">April 2026 - Current</span>
               </div>
               <p class="experience-company">Code The Dream</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">Completing intro course, moving into full stack web development.</p>
             </div>
           </li>
     
@@ -103,7 +117,7 @@
                 <span class="experience-date">February 2026 - Current</span>
               </div>
               <p class="experience-company">BeatSyncro</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">More to come about this!</p>
             </div>
           </li>
     
@@ -114,7 +128,7 @@
                 <span class="experience-date">January 2026 - Current</span>
               </div>
               <p class="experience-company">TrueBase</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">Just accepted into first round of Blue Ridge Labs!</p>
             </div>
           </li>
 
@@ -125,7 +139,19 @@
                 <span class="experience-date">July 2025 - January 2026</span>
               </div>
               <p class="experience-company">Sony - PlayStation</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">
+                - Shipped screen-reader accessibility features for PlayStation Plus Subscriptions, improving
+                usability for 45M+ global users </br>
+                - Built PS5 client UI features using PlayStation’s proprietary React Native framework</br>
+                - Debugged and enhanced accessibility by auditing and fixing intricate focus management and
+                navigation workflows, ensuring seamless state management across platform layers.</br>
+                - Collaborated closely with design, product, and QA teams to deliver stable, user-friendly
+                features.</br>
+                - Improved UX by resolving asynchronous data-fetching and rendering edge cases</br>
+                - Worked on cross-functional internal open contributions libraries.</br>
+                - Rapidly onboarded to large production repositories and reached full productivity utilizing AI
+                as a tool and not a crutch.
+              </p>
             </div>
           </li>
 
@@ -136,7 +162,14 @@
                 <span class="experience-date">January 2025 - June 2025</span>
               </div>
               <p class="experience-company">Techtonica</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">
+                - Architected and developed 8+ full-stack apps using the PERN (PostgreSQL, Express, React, Node.js) stack, focusing on modular components and scalable backends. </br>
+                - Implemented OAuth 2.0 and Google Auth to secure user data and manage login sessions.</br>
+                - Developed data-driven UIs using asynchronous JavaScript and custom hooks to integrate complex REST APIs. </br>
+                - Created responsive, CRUD-capable interfaces with a focus on web accessibility and cross-browser support.</br>
+                - Designed PostgreSQL schemas and optimized API endpoints to ensure data integrity and app performance.</br>
+                - Delivered weekly features in a fast-paced environment, quickly adopting new technologies to meet tight deadlines within a collaborative team.</br>
+              </p>
             </div>
           </li>
 
@@ -147,7 +180,12 @@
                 <span class="experience-date">October 2020 - Current</span>
               </div>
               <p class="experience-company">Primerica</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">
+                - Led a remote culture transformation using digital tools, enabling expansion to 13 states </br>
+                - Created and supported 300+ flexible career opportunities for underserved populations </br>
+                - Delivered workshops, documentation, and presentations </br>
+                - Mentored and managed distributed teams, improving retention and operational efficiency
+              </p>
             </div>
           </li>
 
@@ -158,7 +196,9 @@
                 <span class="experience-date">January 2018 - Current</span>
               </div>
               <p class="experience-company">Uber</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">
+                - Provided best customer servicee to clients, making them feel welcomed when visiting TN / during their commute.
+              </p>
             </div>
           </li>
 
@@ -169,7 +209,10 @@
                 <span class="experience-date">January 2010 - October 2020</span>
               </div>
               <p class="experience-company">42Bricks</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">
+                - Built and scaled a multi-state service business from 75 to 150+ clients
+                - Managed operations, e-commerce, client relationships, and digital workflows
+              </p>
             </div>
           </li>
 
@@ -180,7 +223,9 @@
                 <span class="experience-date">May 2014 - October 2020</span>
               </div>
               <p class="experience-company">Freelance</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">
+                - Worked directly with clients to develop user-friendly responsive web applications for small business clients using HTML, CSS, and JavaScript frameworks
+              </p>
             </div>
           </li>
 
@@ -191,7 +236,11 @@
                 <span class="experience-date">September 2013 - December 2013</span>
               </div>
               <p class="experience-company">AMRAP4Life</p>
-              <p class="experience-description">responsibilities will be listed here</p>
+              <p class="experience-description">
+                - Utilized Wordpress and JavaScript to work on the gamified sector. 
+                - Creating and coding the logic of how the user would get badges. 
+                - Worked on geolocation for their events sector.
+              </p>
             </div>
           </li>
         </ul>

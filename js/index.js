@@ -185,10 +185,30 @@ fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
         for (let i = 0; i < myRepos.length; i++) {
             // Create variable project (createElement li)
             const project = document.createElement("li");
+            // Create variable projectLink for linking
+            const projectLink = document.createElement("a");
+            // Set innerText of project to repo name with bracket notation 
+            // Changing to innerText of projectLink for optional part on rubic
+            projectLink.innerText = myRepos[i].name;
+            projectLink.href = myRepos[i].html_url;
+            // open link in new tab
+            projectLink.target = "_blank";
 
-            // Set innerText of project to repo name with bracket notation
-            project.innerText = myRepos[i].name;
+            // Adding language used
+            const language = document.createElement("p");
+            language.innerText = `Language: ${myRepos[i].language || "No language specificed"}`;
 
+            // Adding last updated
+            const lastUpdated = document.createElement("p");
+            const lastUpdatedDate = new Date(myRepos[i].updated_at).toLocaleDateString();
+            lastUpdated.innerText = `Last updated: ${lastUpdatedDate}`;
+
+            // Append projectLink to project
+            project.appendChild(projectLink);
+            // Append language to project
+            project.appendChild(language);
+            //Append lastUpdated 
+            project.appendChild(lastUpdated);
             // Append project to projectList
             projectList.appendChild(project);
         }
@@ -198,3 +218,21 @@ fetch(`https://api.github.com/users/wk642/repos?per_page=100`)
         console.log(error);
         projectList.innerHTML = "Sorry, my projects could not load right now. I am working on a fix";
     });
+
+// Adding hamburger nav - optional
+const navSwitch = document.querySelector(".nav-switch");
+const hamburgerNav = document.querySelector("#hamburgerNav");
+
+if (navSwitch && hamburgerNav) {
+    const navIcon = navSwitch.querySelector("i");
+
+    navSwitch.addEventListener("click", function () {
+        const isOpen = hamburgerNav.classList.toggle("open");
+
+        navSwitch.setAttribute("aria-expanded", String(isOpen));
+
+        navIcon.className = isOpen
+            ? "fa-solid fa-xmark"
+            : "fa-solid fa-bars";
+    });
+}
