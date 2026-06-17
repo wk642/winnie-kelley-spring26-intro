@@ -15,6 +15,7 @@ const weatherOptions = document.querySelector("#weather-options");
 const showTemperatureButton = document.querySelector("#show-temp");
 //show-feelslike
 const showFeelsLikeButton = document.querySelector("#show-feels-like");
+const weatherLoading = document.querySelector("#weather-loading");
 
 let currentLocation = null;
 
@@ -81,12 +82,17 @@ weatherForm.addEventListener("submit", async function(event){
         weatherLabel.textContent = "Weather:";
         weatherValue.textContent = "Please enter a city";
         weatherOptions.hidden = true;
+        weatherLoading.hidden = true;
         currentLocation = null;
         return;
     }
 
     // try 
     try {
+        weatherOptions.hidden = true;
+        weatherLoading.hidden = false;
+        weatherValue.textContent = "Loading...";
+
         // get location
         const location = await geocoding(cityName);
 
@@ -96,6 +102,7 @@ weatherForm.addEventListener("submit", async function(event){
             weatherLabel.textContent = "Weather:";
             weatherValue.textContent = "City not found.";
             weatherOptions.hidden = true;
+            weatherLoading.hidden = true;
             currentLocation = null;
             return;
         }
@@ -105,11 +112,13 @@ weatherForm.addEventListener("submit", async function(event){
         weatherLabel.textContent = "City found:";
         weatherValue.textContent = "Choose See Temp or See Feels Like.";
         weatherOptions.hidden = false;
+        weatherLoading.hidden = true;
     } catch (error){
         weatherLocation.textContent = cityName ? `${cityName}'s Weather` : "City's Weather";
         weatherLabel.textContent = "Weather:";
         weatherValue.textContent = "No weather loaded";
         weatherOptions.hidden = true;
+        weatherLoading.hidden = true;
         currentLocation = null;
         console.error("Error:", error);
     }

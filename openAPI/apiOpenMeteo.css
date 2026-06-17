@@ -210,6 +210,21 @@ header {
     line-height: 1.7;
 }
 
+.loading-wrap {
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.spinner {
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+}
+[hidden] {
+    display: none;
+}
+
 @media (min-width: 900px) {
     .content {
         grid-template-columns: 2fr 1fr;
