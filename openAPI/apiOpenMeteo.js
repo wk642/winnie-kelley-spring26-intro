@@ -15,6 +15,7 @@ const weatherOptions = document.querySelector("#weather-options");
 const showTemperatureButton = document.querySelector("#show-temp");
 //show-feelslike
 const showFeelsLikeButton = document.querySelector("#show-feels-like");
+// loading spinner
 const weatherLoading = document.querySelector("#weather-loading");
 
 let currentLocation = null;
@@ -43,8 +44,8 @@ async function geocoding(cityName) {
     
 // function getWeather - get temperature first
 async function getTemperature(latitude, longitude) {
-    // set url
-    const temperatureUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature&temperature_unit=fahrenheit`;
+    // set url - adding weather_code here for background effect 
+    const temperatureUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,weather_code&temperature_unit=fahrenheit`;
 
     const response = await fetch(temperatureUrl);
     if(!response.ok) {
@@ -57,7 +58,8 @@ async function getTemperature(latitude, longitude) {
 
 // get feels like now
 async function getFeelsLike(latitude, longitude){
-    const feelsLikeUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=apparent_temperature&temperature_unit=fahrenheit`;
+    // updating get weather_code here as well
+    const feelsLikeUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=apparent_temperature,weather_code&temperature_unit=fahrenheit`;
 
     const response = await fetch(feelsLikeUrl);
 
@@ -67,6 +69,30 @@ async function getFeelsLike(latitude, longitude){
 
     const data = await response.json();
     return data;
+}
+
+// Change background based on weather_code
+function useWeatherBackground(weatherCode) {
+    // remove previous weather background
+    document.body.classList.remove(
+        "weather-default",
+        "weather-clear",
+        "weather-cloudy",
+        "weather-rain",
+        "weather-snow"
+    );
+
+    if (weatherCode === 0) {
+        document.body.classList.add("weather-clear");
+    } else if ([1, 2, 3, 45, 48].includes(weatherCode)) {
+        document.body.classList.add("weather-cloudy");
+    } else if ([51, 53, 55, 61, 63, 65, 80, 81, 82, 95, 96, 99].includes(weatherCode)) {
+        document.body.classList.add("weather-rain");
+    } else if ([56, 57, 66, 67, 71, 73, 75, 77, 85, 86].includes(weatherCode)) {
+        document.body.classList.add("weather-snow");
+    } else {
+        document.body.classList.add("weather-default");
+    }
 }
 
 // add event listener to form
@@ -135,6 +161,8 @@ showTemperatureButton.addEventListener("click", async function () {
         const weatherData = await getTemperature(currentLocation.latitude, currentLocation.longitude);
         weatherLabel.textContent = "Temperature:";
         weatherValue.textContent = `${weatherData.current.temperature_2m}°F`;
+        // change background according to weather_code
+        useWeatherBackground(weatherData.current.weather_code);
     } catch (error) {
         weatherValue.textContent = "Could not load temperature";
         console.error("Error:", error);
@@ -151,6 +179,7 @@ showFeelsLikeButton.addEventListener("click", async function () {
         const weatherData = await getFeelsLike(currentLocation.latitude, currentLocation.longitude);
         weatherLabel.textContent = "Feels Like:";
         weatherValue.textContent = `${weatherData.current.apparent_temperature}°F`;
+        useWeatherBackground(weatherData.current.weather_code);
     } catch (error) {
         weatherValue.textContent = "Could not load feels like";
         console.error("Error:", error);

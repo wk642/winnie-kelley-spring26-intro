@@ -13,6 +13,44 @@ body {
         radial-gradient(circle at top right, rgba(88, 170, 255, 0.18), transparent 28%),
         linear-gradient(135deg, #08111f 0%, #0a1b33 45%, #050b16 100%);
     background-attachment: fixed;
+    transition: background 0.5s ease;
+}
+
+/* Changing the background based on weather_code. Due to time, adding colors for now, but considering images or animation in the future. */
+body.weather-default {
+    background:
+        radial-gradient(circle at top left, rgba(77, 145, 255, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(88, 170, 255, 0.18), transparent 28%),
+        linear-gradient(135deg, #08111f 0%, #0a1b33 45%, #050b16 100%);
+    background-attachment: fixed;
+}
+
+body.weather-clear {
+    background:
+        radial-gradient(circle at top, rgba(255, 204, 82, 0.35), transparent 30%),
+        linear-gradient(135deg, #1e3a8a 0%, #2563eb 45%, #7dd3fc 100%);
+    background-attachment: fixed;
+}
+
+body.weather-cloudy {
+    background:
+        radial-gradient(circle at top left, rgba(203, 213, 225, 0.18), transparent 35%),
+        linear-gradient(135deg, #1f2937 0%, #334155 50%, #64748b 100%);
+    background-attachment: fixed;
+}
+
+body.weather-rain {
+    background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 30%),
+        linear-gradient(135deg, #020617 0%, #0f172a 45%, #1d4ed8 100%);
+    background-attachment: fixed;
+}
+
+body.weather-snow {
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.3), transparent 28%),
+        linear-gradient(135deg, #cbd5e1 0%, #94a3b8 45%, #e2e8f0 100%);
+    background-attachment: fixed;
 }
 
 .wrapper {
